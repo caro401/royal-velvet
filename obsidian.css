@@ -1,481 +1,541 @@
+/*───────────────────────────────────────────────────────
+Royal Velvet
+Version 0.9.0
+Created by @caro401
+Readme:
+https://github.com/caro401/royal-velvet
+----------------------------------------------------------------
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+────────────────────────────────────────────────────── */
+
 /*Fonts*/
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 :root {
-    /*
-    If the font isn't installed in the system, 
-    it will go down the list until it finds on that is.
-    */
+  --default-font: "Fira Sans", "Inter", sans-serif; /*Note and Settings Text*/
+  --font-monospace: "Fira Code", "Source Code Pro", monospace; /*Code block text*/
 
-    --default-font: "Inter", sans-serif; /*Note and Settings Text*/
-    --font-monospace: "Source Code Pro", monospace; /*Code block text*/
-
-    /*
-    var(--variableName); is a variable,
-    so you can use what you set over and over without having
-    to rewrite it multiple times.
-    */
+  --black: #21222c;
+  --blackSecondary: #414558;
+  --blackDark: #1d1e26;
+  --blackXDark: #14141b;
+  --blackLighter: #2a2c37;
+  --white: #f8f8f2;
+  --white-600: rgba(248, 248, 242, 0.6);
+  --white-400: rgba(248, 248, 242, 0.4);
+  --gradientDegree: 135deg;
 }
 
 /*Dark Theme Variables*/
 .theme-dark {
-    --background-modifier-cover: rgba(0, 0, 0, 0.8); /*Obsidian Title Bar Bg*/
-    --background-primary: #202020; /*Note background*/
-    --background-primary-alt: #1a1a1a; /*Note Title background active*/
-    --background-secondary: #161616; /*Sidebar background*/
-    --background-secondary-alt: #000000; /*Sidebar Title background*/
-    
-    --background-modifier-border: #333; /*Border outline of quotes, tables, line breaks*/
-    
-    --text-normal: #dcddde; /*Text body of note*/
-    --text-muted: ; /*Text darker for sidebar, toggles, inactive, tags, etc*/
-    --text-accent: #7f6df2; /*Links*/
-    --text-accent-hover: #8875ff; /*Links hover*/
-    --text-faint: #666; /*Link brackets color & Gutter Numbers*/
+  --pink: #ff80bf;
+  --pinkSecondary: #ffcce6;
+  --pink-100: rgba(255, 128, 191, 0.1);
+  --pink-300: rgba(255, 128, 191, 0.3);
+  --pink-400: rgba(255, 128, 191, 0.4);
 
-    --text-highlight-bg: rgba(255, 255, 0, 0.4); /*Search Matches*/
-    --text-highlight-bg-active: rgba(255, 128, 0, 0.4); /*Active Search Match (Preview Mode)*/
-    --text-selection: rgba(23, 48, 77, 0.99); /*Text Selections*/
+  --green: #8aff80;
+  --greenSecondary: #d0ffcc;
+  --green-200: rgba(138, 255, 128, 0.2);
 
-    --interactive-normal: #2a2a2a; /*Button Color*/
-    --interactive-hover: #303030; /*Button Hovered Color*/
-    --interactive-accent: #483699; /*Workspace Note Title Underline*/
-    --interactive-accent-hover: #4d3ca6; /*Menu Button Hover*/
-    
-    --scrollbar-bg: rgba(255, 255, 255, 0.05); /*Scrollbar Gutter Background*/
-    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.1); /*Scrollbar Color*/
-    --scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.2); /*Scrollbar Dragged Color*/
+  --orange: #ffca80;
+  --orangeSecondary: #ffeacc;
+  --orange-100: rgba(255, 202, 128, 0.1);
+
+  --purple: #9580ff;
+  --purple-200: rgba(149, 128, 255, 0.2);
+
+  --red: #ff9580;
+  --red-900: rgba(255, 149, 128, 0.9);
+
+  --yellow: #ffff80;
+  --yellow-100: rgba(255, 255, 128, 0.1);
+  --yellow-700: rgba(255, 255, 128, 0.7);
+
+  --cyan: rgb(128, 255, 234);
+  --cyan-600: rgba(128, 255, 234, 0.6);
+
+  --background-modifier-cover: var(--blackXDark); /*Obsidian Title Bar Bg*/
+  --background-primary: var(--black); /*Note background*/
+  --background-primary-alt: var(--blackDark); /*Note Title background active*/
+  --background-secondary: var(--blackDark); /*Sidebar background*/
+  --background-secondary-alt: var(--blackXDark); /*Sidebar Title background*/
+
+  --background-modifier-border: var(
+    --blackDark
+  ); /*Border outline of quotes, tables, line breaks*/
+  --background-modifier-form-field: var(--pink-100);
+  --background-modifier-form-field-highlighted: var(--pink-300);
+  --background-modifier-box-shadow: var(--blackLighter);
+  --background-modifier-success: var(--green-200);
+  --background-modifier-error: var(--red-900);
+  --background-modifier-error-rgb: 61, 0, 0;
+  --background-modifier-error-hover: var(--red);
+
+  --text-normal: var(--white); /*Text body of note*/
+  --text-muted: var(
+    --white-600
+  ); /*Text darker for sidebar, toggles, inactive, tags, etc*/
+  --text-accent: var(--pink); /*Links*/
+  --text-accent-hover: var(--pinkSecondary); /*Links hover*/
+  --text-faint: var(--white-600); /*Link brackets color & Gutter Numbers*/
+  --text-error: var(--red);
+  --text-error-hover: var(--redSecondary);
+
+  --text-highlight-bg: var(--yellow-100); /*Search Matches*/
+  --text-highlight-bg-active: var(
+    --orange-100
+  ); /*Active Search Match (Preview Mode)*/
+  --text-selection: var(--purple-200); /*Text Selections*/
+
+  --interactive-normal: var(--blackDark); /*Button Color*/
+  --interactive-hover: var(--blackXDark); /*Button Hovered Color*/
+  --interactive-accent: var(--pink); /*Workspace Note Title Underline*/
+  --interactive-accent-hover: var(--pinkSecondary); /*Menu Button Hover*/
+  --interactive-success: var(--green);
+
+  --scrollbar-bg: var(--black); /*Scrollbar Gutter Background*/
+  --scrollbar-thumb-bg: var(--pink-100); /*Scrollbar Color*/
+  --scrollbar-active-thumb-bg: var(--pink-300); /*Scrollbar Dragged Color*/
 }
-
-.theme-light {
-    --background-primary: #ffffff; /*Note background*/
-    --background-primary-alt: #f5f6f8; /*Note Title background active*/
-    --background-secondary: #f2f3f5; /*Sidebar background*/
-    --background-secondary-alt: #e3e5e8; /*Sidebar Title background*/
-    
-    --background-modifier-border: #ddd; /*Border outline of quotes, tables, line breaks*/
-
-    --text-normal: #2e3338; /*Text body of note*/
-    --text-muted: #888888; /*Text darker for sidebar, toggles, inactive, tags, etc*/
-    --text-accent: #705dcf; /*Links*/
-    --text-accent-hover: #7a6ae6; /*Links hover*/
-    --text-faint: #999999; /*Link brackets color*/
-
-    --text-highlight-bg: rgba(255, 255, 0, 0.4); /*Search Matches*/
-    --text-highlight-bg-active:rgba(255, 128, 0, 0.4); /*Active Search Match (Preview Mode)*/
-    --text-selection: rgba(23, 48, 77, 0.99); /*Text Selections*/
-    
-    --interactive-normal: #f2f3f5; /*Button background Color*/
-    --interactive-hover:#e9e9e9; /*Button Hovered Color*/
-    --interactive-accent: #7b6cd9; /*Workspace Note Title Underline*/
-    --interactive-accent-hover: #8273e6; /*Menu Button Hover*/
-    
-    --scrollbar-bg: rgba(0, 0, 0, 0.05); /*Scrollbar Gutter Background*/
-    --scrollbar-thumb-bg: rgba(0, 0, 0, 0.1); /*Scrollbar Color*/
-    --scrollbar-active-thumb-bg: rgba(0, 0, 0, 0.2); /*Scrollbar Dragged Color*/
-}
-
-/*Box Sizing Reset - this makes it easier to set any ::before and ::after pseudo-elements' dimensions,
-since it includes any border and padding into the height and width values you set.
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}*/
 
 /*----Startup Progress Bar Screen----*/
-/*Startup Progress Bar Window*/
-.progress-bar {}
-
-/*Startup Text*/
-.progress-bar .progress-bar-message {}
-
-/*Startup Progress Bar Background*/
-.progress-bar-indicator .progress-bar-line {}
-
-/*Startup Progress Bar Moving Line*/
-.progress-bar-indicator .progress-bar-subline {}
-
-
-/*----Settings----*/
-/*All Popup Windows: Settings*/
-.modal {}
-
-/*Command Palette & Quick Switcher*/
-.prompt {}
-
-/*The notifications in the top right*/
-.notice {}
-
-/*Context Menu (Right CLick sth)*/
-.menu {}
 
 /*Setting Dropdown*/
-.dropdown {}
+.dropdown {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F8F8F2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  font-family: var(--default-font);
+}
 
-/*Community Themes Browser*/
-.community-theme {}
-
-/*Community Plugins Browser*/
-.community-plugin {}
-
-
-/*--Extras--*/
-
-/*Tooltip Popup*/
-.tooltip {}
-
-
-
-/*----Workspace----*/
-/* ribbons, the thin vertical bars to the far left/right */
-.workspace-ribbon {}
-
-/*Side Panels*/
-.workspace-tabs {}
-
-/*Side Panel: Icons*/
-.workspace-tab-header-inner-icon {}
-
-
-
+.menu-item-icon {
+  color: var(--cyan-600);
+}
 
 /*--File Explorer--*/
 
-/*Nav Top: Create Note, Sort, Create Folder*/
-.nav-header {}
+.nav-folder-title-content {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--pink) 0,
+    var(--orange) 100%
+  );
+  font-weight: 700;
+}
 
-/*Folder*/
-.nav-folder {}
-.nav-folder-title {}
+.collapse-icon:hover {
+  color: var(--pink);
+}
 
-/*Files*/
-.nav-file {}
-.nav-file-title {}
-/* (also applies to many plugins displaying file lists in the side bar) */
+.nav-file-title.is-active {
+  background-color: var(--yellow-100);
+  color: var(--yellow);
+  font-weight: bolder;
+}
 
+.nav-file-title:hover,
+.nav-folder-title:hover {
+  background-color: var(--yellow-100);
+  color: var(--yellow);
+}
+
+.nav-folder-title:hover .nav-folder-collapse-indicator {
+  color: var(--pink);
+}
+.nav-file-title {
+  line-height: 100%;
+}
 
 /*Status Bar*/
-.status-bar {}
-
-/*--Title Bar--*/
-
-/*Title Bar*/
-.titlebar {}
-
-/*Navigation Button - Back */
-.mod-back {}
-
-/*Navigation Button - Forward*/
-.mod-forward {}
-
-/*Window Control- Minimize*/
-.mod-minimize {}
-
-/*Window Control- Minimize*/
-.mod-maximize {}
-
-/*Window Control- Close*/
-.mod-close {}
-
-
-
-/*Buttons*/
-/*Default Buttons*/
-button {}
-/*Settings Buttons*/
-button.mod-cta {}
-/*Warning Buttons*/
-button.mod-warning{}
-
-
+.status-bar {
+  background-color: var(--blackXDark);
+  border-top: unset;
+  padding-top: 4px;
+  max-height: 28px;
+}
 
 /*--Workspace: Notes--*/
 /*Note Title Bar*/
-.workspace-leaf .view-header {}
+.workspace-leaf .view-header {
+  border-bottom: 5px solid var(--black);
+}
 
-/*Inactive Note Titlebar*/
-/*Note Title Bar: Text*/
-.view-header-title {}
+.view-header-title {
+  color: var(--pink-500);
+}
 
-/*Note Title Bar: Note Icon*/
-.view-header-icon {}
-
-/*Note Title Bar: Settings Icons*/
-.view-action {}
-
+.workspace-split.mod-root
+  > .workspace-leaf:first-of-type:last-of-type
+  .view-header,
+.view-header {
+  border-bottom: 5px solid var(--black);
+}
 /*Active Note Titlebar*/
 /*Note Title Bar: Text*/
-.workspace-leaf.mod-active .view-header-title {}
-
-/*Note Title Bar: Note Icon*/
-.workspace-leaf.mod-active .view-header-icon {}
-
-/*Note Title Bar: Settings Icons*/
-.workspace-leaf.mod-active .view-action {}
-
-
-
-
-
-
-
-/*----Notes----*/
-.cm-s-obsidian:not(.is-live-preview) {} /*Source Mode*/
-.markdown-source-view {} /*Source Mode*/
-
-.cm-s-obsidian.is-live-preview {} /*Live Preview Mode*/
-
-.markdown-preview-view {} /*Reading Mode*/
+.workspace-leaf.mod-active .view-header-title {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--pink) 0,
+    var(--orange) 100%
+  );
+}
 
 /*--Emphasis--*/
+strong,
+.cm-s-obsidian .cm-strong {
+  color: var(--pink);
+}
 
-/*Bold*/
-strong {} /*Reading View*/
-.cm-s-obsidian .cm-strong {} /*Editing View*/
-
-/*Italic/Emphasis*/
-em {} /*Reading View*/
-.cm-em {} /*Editing View*/
+em,
+.cm-em {
+  color: var(--cyan);
+}
 
 /*Highlight*/
-.markdown-preview-view mark {} /*Reading View*/
-.cm-s-obsidian .cm-highlight {} /*Editing View*/
-.cm-s-obsidian .cm-formatting-highlight {} /*Editing View highlight symbols/syntax*/
+.markdown-preview-view mark,
+.cm-s-obsidian .cm-highlight,
+.cm-s-obsidian .cm-formatting-highlight {
+  color: var(--yellow);
+  font-weight: 500;
+}
 
-/*Strikethrough*/
-.cm-strikethrough {} /*Editing View*/
-del {} /*Reading View*/
+.cm-strikethrough,
+del {
+  color: var(--white-400);
+}
 
 /*--Headers/Headings--*/
-h1 {} /*Reading Mode*/
-h2 {} /*Reading Mode*/
-h3 {} /*Reading Mode*/
-h4 {} /*Reading Mode*/
-h5 {} /*Reading Mode*/
-h6 {} /*Reading Mode*/
-.cm-header-1 {} /*Source Mode*/
-.cm-header-2 {} /*Source Mode*/
-.cm-header-3 {} /*Source Mode*/
-.cm-header-4 {} /*Source Mode*/
-.cm-header-5 {} /*Source Mode*/
-.cm-header-6 {} /*Source Mode*/
 
-.cm-header {} /* applies to all source mode headings */
-
-
+h1,
+.cm-header-1 {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--pink) 0,
+    var(--orange) 100%
+  );
+} /*Source Mode*/
+h2,
+.cm-header-2 {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--orange) 0,
+    var(--yellow) 100%
+  );
+} /*Source Mode*/
+h3,
+.cm-header-3 {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--yellow) 0,
+    var(--green) 100%
+  );
+} /*Source Mode*/
+h4,
+.cm-header-4 {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--green) 0,
+    var(--cyan) 100%
+  );
+} /*Source Mode*/
+h5,
+.cm-header-5 {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--cyan) 0,
+    var(--purple) 100%
+  );
+} /*Source Mode*/
+h6,
+.cm-header-6 {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--purple) 0,
+    var(--pink) 100%
+  );
+} /*Source Mode*/
 
 /*--Horizontal Line--*/
-hr {} /*Reading Mode*/
-.hr.cm-line {} /*Source Mode*/
-.HyperMD-hr-bg {} /*Source Mode*/
+hr,
+.hr.cm-line,
+.HyperMD-hr-bg {
+  border-color: var(--orange);
+}
 
 /*HR Line Text*/
-.cm-s-obsidian pre.HyperMD-hr {} /*Source Mode*/
-
-
-
-
-/*--Comments--*/
-/* html comments and obsidian style comments */
-.cm-comment {}
-
-
-
+.cm-s-obsidian pre.HyperMD-hr {
+  color: var(--orange);
+}
 
 /*--Code--*/
-code {}
+code,
+.cm-s-obsidian span.cm-inline-code,
+.markdown-preview-view code {
+  color: var(--cyan);
+  font-size: 100%;
+}
 
-/*Inline Code*/
-.cm-s-obsidian span.cm-inline-code {} /*Source Mode*/
-.markdown-preview-view code {} /*Reading Mode*/
+.markdown-preview-view pre,
+.cm-s-obsidian .HyperMD-codeblock {
+  padding-left: 2ch;
+}
 
-/*Codeblock (no language specified) */
-.markdown-preview-view pre {} /*Reading Mode*/
-.cm-s-obsidian pre.HyperMD-codeblock {} /*Source Mode*/
+.code-block-flair,
+.markdown-source-view.mod-cm6 .code-block-flair {
+  color: var(--orange);
+  padding-top: 1ch;
+}
 
-/*Codeblock: Language Specified: ```js*/
-.markdown-preview-view pre[class*=language-] {} /*Reading Mode*/
-.markdown-preview-view code[class*=language-] {} /*Reading Mode*/
-
-
-
+.cm-s-obsidian .HyperMD-codeblock-begin,
+.cm-s-obsidian .HyperMD-codeblock-end {
+  color: var(--cyan);
+}
 
 /*--Links--*/
-.cm-s-obsidian span.cm-hmd-internal-link {} /*Source Mode*/
+.cm-s-obsidian span.cm-hmd-internal-link,
+a.internal-link {
+  color: var(--orange);
+}
+.cm-s-obsidian span.cm-hmd-internal-link:hover,
+a.internal-link:hover {
+  color: var(--orangeSecondary);
+}
 
-/*Wiki Links*/
-a.internal-link {} /*Reading Mode*/
+.is-unresolved,
+span.is-unresolved > span.cm-hmd-internal-link,
+.markdown-source-view.mod-cm6 .is-unresolved,
+.markdown-preview-view .internal-link.is-unresolved,
+span.is-unresolved,
+a.internal-link.is-unresolved {
+  opacity: 1;
+  color: var(--yellow-700) !important;
+}
 
-/*Markdown Links*/
-a.external-link {} /*Reading Mode*/
-
-/*Link to No Page*/
-a.internal-link.is-unresolved {} /*Reading Mode*/
-
-
-
+.external-link:hover,
+.cm-s-obsidian span.cm-link:hover {
+  color: var(--greenSecondary);
+}
+a.external-link,
+.cm-s-obsidian span.cm-link {
+  color: var(--green);
+}
 
 /*--Lists--*/
-.cm-s-obsidian .HyperMD-list-line {} /*Source Mode*/
-
-/*List Bullet/Number/Formatting*/
-li::marker {} /*Reading Mode*/
-span.cm-formatting-list-ul {} /*Source Mode*/
-span.cm-formatting-list-ol {} /*Source Mode*/
-
-/*Bullet Lists*/
-ul {} /*Reading Mode*/
-
-/*Bullet List Text*/
-ul li {} /*Reading Mode*/
-
-/*Bullet List Symbol*/
-ul li::marker {} /*Reading Mode*/
-
-/*Numbered Lists*/
-ol {} /*Reading Mode*/
-
-/*Numbered List Text*/
-ol li {} /*Reading Mode*/
-
-/*Numbered List Number*/
-ol li::marker {} /*Reading Mode*/
-
-/*Checkbox List*/
-li.task-list-item {} /*Reading Mode*/
-input[type=checkbox i] {} /*Reading Mode*/
-
-/*Checked Checkbox*/
-.markdown-preview-view .task-list-item-checkbox:checked {} /*Reading Mode*/
-input[type=checkbox]:checked {} /*Reading Mode*/
-
-
-
-
-
+.markdown-preview-view .task-list-item-checkbox:checked,
+input[type="checkbox"]:checked {
+  filter: hue-rotate(36deg) brightness(1.5);
+}
 /*--Blockquotes--*/
-.markdown-preview-view blockquote {}
+blockquote,
+.markdown-preview-view blockquote,
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  border: 1px solid;
+  border-left-width: 4px;
+  border-radius: 4px;
+  border-color: var(--purple);
+  background-color: var(--blackDark);
+  padding: 10px 20px;
+  margin-inline-start: 30px;
+  margin-inline-end: 30px;
+}
 
-
-
-
+cite {
+  width: 100%;
+  text-align: right;
+  display: block;
+  color: var(--yellow);
+}
 
 /*--Tables--*/
-table {} /*Reading Mode*/
+table {
+  outline: 3px solid var(--blackDark);
+  outline-offset: -2px;
+}
 
-/*Table Headers*/
-table th {} /*Reading Mode*/
+thead {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--purple) 0,
+    var(--pink) 100%
+  );
+}
 
-/*Table Column*/
-table td {} /*Reading Mode*/
+tbody tr:nth-child(odd) {
+  background-color: var(--blackDark);
+}
+tbody tr:nth-child(even) {
+  background-color: var(--black);
+}
 
-/*Table Row*/
-table tr {} /*Reading Mode*/
-.cm-s-obsidian .HyperMD-table-row {} /*Source Mode*/
-
-
-
+.markdown-preview-view th,
+.markdown-preview-view td {
+  padding-top: 1ch;
+  padding-bottom: 1ch;
+  border: unset;
+  text-align: left;
+}
 
 /*--Tags--*/
-a.tag {} /*Reading Mode*/
-.cm-s-obsidian span.cm-hashtag {} /*Source Mode*/
-
-
-
-
+a.tag,
+.cm-s-obsidian span.cm-hashtag {
+  color: var(--pink);
+}
 
 /*--Frontmatter/Metadata/Yaml--*/
-.frontmatter-container {} /*Reading Mode*/
-.CodeMirror-line .cm-s-obsidian .cm-hmd-frontmatter {} /*Source Mode*/
+.frontmatter-container,
+.cm-s-obsidian .cm-hmd-frontmatter {
+  font-size: small;
+  line-height: 100%;
+}
 
-/*Frontmatter Tag*/
-.frontmatter-container .frontmatter-alias {} /*Reading Mode*/
+.frontmatter-container .tag {
+  border-color: var(--pink);
+}
 
-
-
-
-
-/*--Embeds--*/
-.markdown-preview-view .markdown-embed {} /*Reading Mode*/
-.internal-embed.is-loaded:not(.image-embed) {} /*Reading Mode*/
-
-.markdown-source-view.mod-cm6 .cm-embed-block {} /*Live Preview Mode*/
-.markdown-source-view .markdown-embed:not(.mod-empty) {} /*Live Preview Mode*/
-
-/*File Embed*/
-.markdown-preview-view .file-embed {} /*Reading Mode*/
-.markdown-source-view .file-embed:not(.mod-empty) {} /*Live Preview Mode*/
-
-/*Empty/No Embed Found*/
-.markdown-source-view .markdown-embed.mod-empty {} /*Live Preview Mode*/
-.markdown-source-view .file-embed.mod-empty {} /*Live Preview Mode*/
-
-/*Embed Titles*/
-.markdown-embed-title {} /*Reading Mode*/
-.file-embed-title {} /*Reading Mode*/
-
-/*Embed Link*/
-.markdown-embed-link {}
-.file-embed-link {}
-
+.frontmatter-container .tag:hover {
+  border-color: var(--pinkSecondary);
+}
 
 /*--Footnotes--*/
+section.footnotes > hr {
+  border-color: var(--text-muted);
+}
 
-/*Footnote link in note*/
-.markdown-preview-view a.footnote-link {} /*Reading View*/
+section.footnotes li,
+.cm-s-obsidian .HyperMD-footnote {
+  color: var(--text-muted);
+  font-size: smaller;
+}
 
-/*Reference Number in text*/
-.cm-s-obsidian span.cm-footref {} /*Editing View*/
-
-/*Footnotes section at the bottom of the note*/
-.markdown-preview-view .footnotes {} /*Reading View*/
-
-/*Footnote back ref (arrow) at the bottom of the note*/
-.footnote-backref {} /*Reading View*/
-
+.footnote-backref {
+  color: var(--pink-400);
+}
 
 /*--Graph--*/
 
-.graph-view.color-fill {
-	color: var(--text-muted); /*color of nodes*/
-}
-.graph-view.color-fill-focused { /*color of focused node/note*/
-	color: #ffdd00;
-}
-.theme-dark .graph-view.color-fill-tag { /*light mode tag color*/
-	color: #704214;
-}
-.theme-light .graph-view.color-fill-tag { /*dark mode tag color*/
-	color: #E0D3AF;
-}
-.theme-dark .graph-view.color-fill-attachment { /*dark mode attachment color*/
-	color: #1a356b;
-}
-.theme-light .graph-view.color-fill-attachment { /*light mode attachment color*/
-	color: #83D4F4;
-}
-.graph-view.color-fill-unresolved { /*unresolved(not created yet) notes*/
-	color: var(--text-muted);
-	opacity: 0.4;
-}
-.graph-view.color-arrow { /*arrow color*/
-	color: var(--text-normal);
-	opacity: 0.5;
-}
-.graph-view.color-circle { /*focused node border color*/
-	color: var(--text-normal);
-}
-.graph-view.color-line { /*link color*/
-	color: var(--background-modifier-border);
-}
-.graph-view.color-text { /*text color*/
-	color: var(--text-normal);
-}
-.graph-view.color-fill-highlight { /*focused node color*/
-	color: var(--interactive-accent);
-}
-.graph-view.color-line-highlight { /*focused node connections*/
-	color: var(--interactive-accent);
+.theme-dark .graph-view.color-fill-tag {
+  color: var(--orange);
 }
 
-.graph-controls {} /*Graph Menu*/
+.theme-dark .graph-view.color-fill-attachment {
+  color: var(--green);
+}
+
+.graph-view.color-arrow,
+.graph-view.color-line {
+  color: var(--blackSecondary);
+}
+
+.graph-view.color-text {
+  color: var(--white);
+}
+
+.graph-view.color-circle {
+  color: var(--cyan);
+}
+
+.graph-view.color-fill-focused {
+  color: var(--purple);
+}
+
+/* Other */
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  border: 1px solid var(--pink);
+}
+
+input[type="range"] {
+  background-color: var(--text-faint);
+}
+
+.workspace-leaf-resize-handle:hover {
+  background-color: var(--blackSecondary);
+}
+
+img,
+.markdown-source-view.mod-cm6 .cm-content > img {
+  margin: 1ch !important;
+}
+
+button.mod-cta,
+button.mod-muted,
+button.mod-warning {
+  font-family: var(--default-font);
+}
+
+/* Code highlighting theme */
+
+.theme-dark .token.keyword,
+.theme-dark .cm-keyword,
+.theme-dark .cm-builtin,
+.theme-dark .token.operator,
+.theme-dark .cm-operator {
+  color: var(--pink);
+}
+
+.theme-dark .token.atrule,
+.theme-dark .token.attr-value,
+.theme-dark .token.function,
+.theme-dark .cm-attribute,
+.theme-dark .cm-type,
+.theme-dark .cm-def,
+.theme-dark .cm-variable {
+  color: var(--green);
+}
+
+.theme-dark .token.parameter {
+  color: var(--orange);
+}
+
+.theme-dark .token.class-name {
+  color: var(--purple);
+}
+
+.theme-dark .token.string,
+.theme-dark .cm-string {
+  color: var(--yellow);
+}

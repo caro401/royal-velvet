@@ -1,12 +1,9 @@
-# Obsidian Template Theme
+# Royal Velvet Obsidian Theme
 
-Press `Use this template` to use this template for your Obsidian theme!
+A theme for [Obsidian](https://obsidian.md/), inspired by the beautiful colours of [Royal Velvet Obsidian](https://duckduckgo.com/?t=ffab&q=Mexican+Royal+Velvet+Obsidian&iax=images&ia=images) and the distinct colours used in programming syntax highlighting themes.
 
-## Get started
-- [Guides for Obsidian Theme Designers](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/for+Theme+Designers)
-- [Theme Design Utilities Plugin](https://github.com/chrisgrieser/obsidian-theme-design-utilities)
-- [Example vault with a huge collection of test notes](https://github.com/obsidian-community/theme-dev-vault)
+## Feedback
 
-## Theme Ready?
-- Replace the `promo_screenshot.png` with a screenshot of your theme.
-- [How to add your theme to the community theme store](https://publish.obsidian.md/hub/04+-+Guides%2C+Workflows%2C+%26+Courses/Guides/How+to+add+your+theme+to+the+community+theme+store)
+If you have any issues or suggestions, please [submit an issue](https://github.com/caro401/royal-velvet/issues/new) or raise a [pull request](https://github.com/caro401/royal-velvet/pulls/).
+
+I don't use many plugins or advanced features of Obsidian, so there's defintely some usecases that won't look good - please let me know!
