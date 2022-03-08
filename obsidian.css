@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 Royal Velvet
-Version 0.9.0
+Version 0.9.1
 Created by @caro401
 Readme:
 https://github.com/caro401/royal-velvet
@@ -367,8 +367,7 @@ input[type="checkbox"]:checked {
 }
 /*--Blockquotes--*/
 blockquote,
-.markdown-preview-view blockquote,
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+.markdown-preview-view blockquote {
   border: 1px solid;
   border-left-width: 4px;
   border-radius: 4px;
@@ -377,6 +376,19 @@ blockquote,
   padding: 10px 20px;
   margin-inline-start: 30px;
   margin-inline-end: 30px;
+}
+
+/* Just left border with no rounding in live preview
+ because there's no parent element for the whole quote */
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+  background-color: var(--blackDark);
+  padding: 10px 20px;
+  margin-inline-start: 30px;
+  margin-inline-end: 30px;
+  border-left: 4px solid var(--purple);
+}
+.cm-s-obsidian span.cm-quote {
+  color: var(--text-normal);
 }
 
 cite {
