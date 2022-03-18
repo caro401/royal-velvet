@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 Royal Velvet
-Version 0.9.2
+Version 0.9.3
 Created by @caro401
 Readme:
 https://github.com/caro401/royal-velvet
@@ -114,9 +114,8 @@ SOFTWARE.
   --scrollbar-bg: var(--black); /*Scrollbar Gutter Background*/
   --scrollbar-thumb-bg: var(--pink-100); /*Scrollbar Color*/
   --scrollbar-active-thumb-bg: var(--pink-300); /*Scrollbar Dragged Color*/
+  --indentation-guide: var(--blackSecondary);
 }
-
-/*----Startup Progress Bar Screen----*/
 
 /*Setting Dropdown*/
 .dropdown {
@@ -129,7 +128,6 @@ SOFTWARE.
 }
 
 /*--File Explorer--*/
-
 .nav-folder-title-content {
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -556,4 +554,42 @@ button.mod-warning {
 .theme-dark .token.string,
 .theme-dark .cm-string {
   color: var(--yellow);
+}
+
+/* Nested bullets are different colours */
+ul li::marker,
+ol li::marker,
+.HyperMD-list-line-1 .list-bullet::after,
+.HyperMD-list-line.HyperMD-list-line-1 .cm-formatting-list {
+  color: var(--pink);
+}
+ul ul li::marker,
+ol ol li::marker,
+.HyperMD-list-line-2 .list-bullet::after,
+.HyperMD-list-line.HyperMD-list-line-2 .cm-formatting-list {
+  color: var(--orange);
+}
+ul ul ul li::marker,
+ol ol ol li::marker,
+.HyperMD-list-line-3 .list-bullet::after,
+.HyperMD-list-line.HyperMD-list-line-3 .cm-formatting-list {
+  color: var(--yellow);
+}
+ul ul ul ul li::marker,
+ol ol ol ol li::marker,
+.HyperMD-list-line-4 .list-bullet::after,
+.HyperMD-list-line.HyperMD-list-line-4 .cm-formatting-list {
+  color: var(--green);
+}
+ul ul ul ul ul li::marker,
+ol ol ol ol ol li::marker,
+.HyperMD-list-line-5 .list-bullet::after,
+.HyperMD-list-line.HyperMD-list-line-5 .cm-formatting-list {
+  color: var(--cyan);
+}
+ul ul ul ul ul ul li::marker,
+ol ol ol ol ol ol li::marker,
+.HyperMD-list-line-6 .list-bullet::after,
+.HyperMD-list-line.HyperMD-list-line-6 .cm-formatting-list {
+  color: var(--purple);
 }
