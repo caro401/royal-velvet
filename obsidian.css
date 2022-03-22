@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 Royal Velvet
-Version 0.9.4
+Version 0.9.5
 Created by @caro401
 Readme:
 https://github.com/caro401/royal-velvet
@@ -518,7 +518,12 @@ input[type="range"] {
 
 img,
 .markdown-source-view.mod-cm6 .cm-content > img {
-  margin: 1ch !important;
+  margin: 1ch;
+}
+
+/* Don't put margin around icon folder emoji icons */
+div.obsidian-icon-folder-icon > img {
+  margin: 0;
 }
 
 button.mod-cta,
