@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 Royal Velvet
-Version 0.9.5
+Version 0.9.6
 Created by @caro401
 Readme:
 https://github.com/caro401/royal-velvet
@@ -338,7 +338,6 @@ code,
 }
 
 /*--inline code in headings--*/
-/*--solution 1 (remove background)--*/
 .markdown-preview-view h1 code,
 .markdown-preview-view h2 code,
 .markdown-preview-view h3 code,
@@ -347,51 +346,6 @@ code,
 .markdown-preview-view h6 code {
   background-color: unset;
 }
-
-/*--solution 2 (no color gradient)--*/
-/* .markdown-preview-view h1 code {
-  -webkit-text-fill-color: #ffa5a0;
-}
-.markdown-preview-view h2 code {
-  -webkit-text-fill-color: #ffe580;
-}
-.markdown-preview-view h3 code {
-  -webkit-text-fill-color: #c5ff80;
-}
-.markdown-preview-view h4 code {
-  -webkit-text-fill-color: #85ffb5;
-}
-.markdown-preview-view h5 code {
-  -webkit-text-fill-color: #8bc0f5;
-}
-.markdown-preview-view h6 code {
-  -webkit-text-fill-color: #ca80df;
-} */
-
-/*--solution 3 (best looking, doesn't work on mobile)--*/
-/* .markdown-preview-view h1 code,
-.markdown-preview-view h2 code,
-.markdown-preview-view h3 code,
-.markdown-preview-view h4 code,
-.markdown-preview-view h5 code,
-.markdown-preview-view h6 code {
-  background-color: unset;
-  background-image: linear-gradient(
-    #70706D,
-    #70706D 
-  );
-  background-blend-mode: overlay;
-} */
-
-/*--solution 4 (foreground font will be darkened a bit)--*/
-/* .markdown-preview-view h1 code,
-.markdown-preview-view h2 code,
-.markdown-preview-view h3 code,
-.markdown-preview-view h4 code,
-.markdown-preview-view h5 code,
-.markdown-preview-view h6 code {
-  background-color: #02020320;
-} */
 
 /*--Links--*/
 .cm-s-obsidian span.cm-hmd-internal-link,
