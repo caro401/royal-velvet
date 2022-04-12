@@ -6,7 +6,7 @@ A theme for [Obsidian](https://obsidian.md/), inspired by the beautiful colours 
 
 ## Emoji in headings
 
-If you use emoji in headings, you will need to add a plugin to make these display in the right colour in reading mode. Install and enable the [Dynamic Highlights](obsidian://show-plugin?id=obsidian-dynamic-highlights) plugin, and import the following code in that plugin's settings:
+If you use emoji in headings, you will need to add a plugin to make these display in the right colour in reading mode. Install and enable the [Dynamic Highlights](https://github.com/nothingislost/obsidian-dynamic-highlights) plugin, and import the following code in that plugin's settings:
 
 ```json
 {
