@@ -43,6 +43,10 @@ SOFTWARE.
   --gradientDegree: 135deg;
 }
 
+body {
+  --font-monospace-theme: "Fira Code", "Source Code Pro", monospace; /*Code block text*/
+}
+
 /*Dark Theme Variables*/
 .theme-dark {
   --pink: #ff80bf;
