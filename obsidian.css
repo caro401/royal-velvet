@@ -613,7 +613,7 @@ ol ol ol ol ol ol li::marker,
 /*
 [BUG] Characters disappearing in headings #17
 why? - this occurs in legacy editor with spell check enabled, if words in headings are marked by spell checker
-what causes this? - .CodeMirror.cm-spell-error setting red squiggly line as background-image, thus overwriting the color gradient
+what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as background-image, thus overwriting the color gradient and making the letters disappear
 */
 
 .CodeMirror .cm-spell-error {
@@ -622,42 +622,42 @@ what causes this? - .CodeMirror.cm-spell-error setting red squiggly line as back
   text-decoration-color: red;
 }
 
-.cm-header.cm-header-1.cm-overlay.cm-spell-error {
+.cm-header-1.cm-spell-error {
   background-image: linear-gradient(
     var(--gradientDegree),
     var(--pink) 0,
     var(--orange) 100%
   );
 }
-.cm-header.cm-header-2.cm-overlay.cm-spell-error {
+.cm-header-2.cm-spell-error {
   background-image: linear-gradient(
     var(--gradientDegree),
     var(--orange) 0,
     var(--yellow) 100%
   );
 }
-.cm-header.cm-header-3.cm-overlay.cm-spell-error {
+.cm-header-3.cm-spell-error {
   background-image: linear-gradient(
     var(--gradientDegree),
     var(--yellow) 0,
     var(--green) 100%
   );
 }
-.cm-header.cm-header-4.cm-overlay.cm-spell-error {
+.cm-header-4.cm-spell-error {
   background-image: linear-gradient(
     var(--gradientDegree),
     var(--green) 0,
     var(--cyan) 100%
   );
 }
-.cm-header.cm-header-5.cm-overlay.cm-spell-error {
+.cm-header-5.cm-spell-error {
   background-image: linear-gradient(
     var(--gradientDegree),
     var(--cyan) 0,
     var(--purple) 100%
   );
 }
-.cm-header.cm-header-6.cm-overlay.cm-spell-error {
+.cm-header-6.cm-spell-error {
   background-image: linear-gradient(
     var(--gradientDegree),
     var(--purple) 0,
