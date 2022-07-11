@@ -609,3 +609,28 @@ ol ol ol ol ol ol li::marker,
 .HyperMD-list-line.HyperMD-list-line-6 .cm-formatting-list {
   color: var(--purple);
 }
+
+/*
+
+[BUG] Characters disappearing in headings #17
+
+why? - this occurs in legacy editor with spell check enabled, if words in headings are marked by spell checker
+
+what causes this? - this is caused by .CodeMirror .cm-spell-error setting a new background-image
+
+*/
+
+
+.CodeMirror .cm-spell-error {
+  background-image: unset;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.cm-header.cm-header-1.cm-overlay.cm-spell-error {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--pink) 0,
+    var(--orange) 100%
+  );
+}
