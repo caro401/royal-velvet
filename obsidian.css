@@ -609,3 +609,8 @@ ol ol ol ol ol ol li::marker,
 .HyperMD-list-line.HyperMD-list-line-6 .cm-formatting-list {
   color: var(--purple);
 }
+
+.suggestion-highlight,
+.search-result-file-matched-text {
+  color: var(--pink);
+}
