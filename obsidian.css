@@ -367,11 +367,16 @@ a.internal-link.is-unresolved {
 
 a.external-link,
 .cm-s-obsidian span.cm-link,
-.cm-s-obsidian span.cm-link.cm-quote {
+.cm-s-obsidian span.cm-link.cm-quote,
+.cm-s-obsidian span.cm-url {
   color: var(--green);
 }
+.cm-s-obsidian span.cm-url {
+  text-decoration: unset;
+}
 .external-link:hover,
-.cm-s-obsidian span.cm-link:hover {
+.cm-s-obsidian span.cm-link:hover,
+.cm-s-obsidian span.cm-url:hover {
   color: var(--greenSecondary);
 }
 
