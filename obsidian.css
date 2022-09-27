@@ -611,6 +611,11 @@ ol ol ol ol ol ol li::marker,
   color: var(--purple);
 }
 
+.suggestion-highlight,
+.search-result-file-matched-text {
+  color: var(--pink);
+}
+
 /*
 [BUG] Characters disappearing in headings #17
 why? - this occurs in legacy editor with spell check enabled, if words in headings are marked by spell checker
