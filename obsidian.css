@@ -330,10 +330,6 @@ code,
   color: var(--cyan);
 }
 
-.markdown-rendered code {
-  background-color: unset;
-}
-
 /*--inline code in headings--*/
 .markdown-preview-view h1 code,
 .markdown-preview-view h2 code,
@@ -367,11 +363,16 @@ a.internal-link.is-unresolved {
 
 a.external-link,
 .cm-s-obsidian span.cm-link,
-.cm-s-obsidian span.cm-link.cm-quote {
+.cm-s-obsidian span.cm-link.cm-quote,
+.cm-s-obsidian span.cm-url {
   color: var(--green);
 }
+.cm-s-obsidian span.cm-url {
+  text-decoration: unset;
+}
 .external-link:hover,
-.cm-s-obsidian span.cm-link:hover {
+.cm-s-obsidian span.cm-link:hover,
+.cm-s-obsidian span.cm-url:hover {
   color: var(--greenSecondary);
 }
 
@@ -613,4 +614,59 @@ ol ol ol ol ol ol li::marker,
 .suggestion-highlight,
 .search-result-file-matched-text {
   color: var(--pink);
+}
+
+/*
+[BUG] Characters disappearing in headings #17
+why? - this occurs in legacy editor with spell check enabled, if words in headings are marked by spell checker
+what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as background-image, thus overwriting the color gradient and making the letters disappear
+*/
+
+.CodeMirror .cm-spell-error {
+  background-image: unset;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.cm-header-1.cm-spell-error {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--pink) 0,
+    var(--orange) 100%
+  );
+}
+.cm-header-2.cm-spell-error {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--orange) 0,
+    var(--yellow) 100%
+  );
+}
+.cm-header-3.cm-spell-error {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--yellow) 0,
+    var(--green) 100%
+  );
+}
+.cm-header-4.cm-spell-error {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--green) 0,
+    var(--cyan) 100%
+  );
+}
+.cm-header-5.cm-spell-error {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--cyan) 0,
+    var(--purple) 100%
+  );
+}
+.cm-header-6.cm-spell-error {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--purple) 0,
+    var(--pink) 100%
+  );
 }
