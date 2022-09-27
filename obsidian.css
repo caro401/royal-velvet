@@ -330,10 +330,6 @@ code,
   color: var(--cyan);
 }
 
-.markdown-rendered code {
-  background-color: unset;
-}
-
 /*--inline code in headings--*/
 .markdown-preview-view h1 code,
 .markdown-preview-view h2 code,
