@@ -611,6 +611,51 @@ ol ol ol ol ol ol li::marker,
   color: var(--purple);
 }
 
+/* 7th level and higher: grey */
+ul ul ul ul ul ul ul li::marker,
+ol ol ol ol ol ol ol li::marker,
+.HyperMD-list-line-7 .list-bullet::after,
+.HyperMD-list-line.HyperMD-list-line-7 .cm-formatting-list {
+  color: var(--list-marker-color);
+}
+
+/* 1.0.0 nested list color variation fix */
+.HyperMD-list-line-1 .list-bullet::after,
+.has-list-bullet .list-bullet:after {
+  background-color:var(--pink);
+}
+
+.HyperMD-list-line-2 .list-bullet::after,
+.has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--orange);
+}
+
+.HyperMD-list-line-3 .list-bullet::after,
+.has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--yellow);
+}
+
+.HyperMD-list-line-4 .list-bullet::after,
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--green);
+}
+
+.HyperMD-list-line-5 .list-bullet::after,
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--cyan);
+}
+
+.HyperMD-list-line-6 .list-bullet::after,
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--purple);
+}
+
+/* 7th level and higher: grey */
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--list-marker-color);
+}
+
+/* Search Suggestions Highlight */
 .suggestion-highlight,
 .search-result-file-matched-text {
   color: var(--pink);
