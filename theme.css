@@ -655,6 +655,76 @@ ol ol ol ol ol ol ol li::marker,
   background-color: var(--list-marker-color);
 }
 
+
+/*--Coloured Checkboxes--*/
+ul input[type=checkbox],
+.HyperMD-list-line-1 input[type=checkbox]{
+  border-color: var(--pink);
+}
+.HyperMD-list-line-1 input[type=checkbox][data-task=x],
+.has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--pink);
+  border-color: var(--pink);
+}
+
+ul ul input[type=checkbox],
+.HyperMD-list-line-2 input[type=checkbox]{
+  border-color: var(--orange);
+}
+.HyperMD-list-line-2 input[type=checkbox][data-task=x],
+.has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--orange);
+  border-color: var(--orange);
+}
+
+ul ul ul input[type=checkbox],
+.HyperMD-list-line-3 input[type=checkbox]{
+  border-color: var(--yellow);
+}
+.HyperMD-list-line-3 input[type=checkbox][data-task=x],
+.has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+}
+
+ul ul ul ul input[type=checkbox],
+.HyperMD-list-line-4 input[type=checkbox]{
+  border-color: var(--green);
+}
+.HyperMD-list-line-4 input[type=checkbox][data-task=x],
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+ul ul ul ul ul input[type=checkbox],
+.HyperMD-list-line-5 input[type=checkbox]{
+  border-color: var(--cyan);
+}
+.HyperMD-list-line-5 input[type=checkbox][data-task=x],
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+ul ul ul ul ul ul input[type=checkbox],
+.HyperMD-list-line-6 input[type=checkbox]{
+  border-color: var(--purple);
+}
+.HyperMD-list-line-6 input[type=checkbox][data-task=x],
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--purple);
+  border-color: var(--purple);
+}
+
+ul ul ul ul ul ul ul input[type=checkbox]{
+  border-color: var(--checkbox-border-color);
+}
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--checkbox-color);
+  border-color: var(--checkbox-color);
+}
+
 /* Search Suggestions Highlight */
 .suggestion-highlight,
 .search-result-file-matched-text {
