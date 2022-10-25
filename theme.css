@@ -789,3 +789,30 @@ what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as ba
     var(--pink) 100%
   );
 }
+
+/* Tab Title */
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.is-focused .workspace-leaf.mod-active .view-header-title {
+  font-weight: 700;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(var(--gradientDegree),
+      var(--pink) 0,
+      var(--orange) 100%);
+}
+
+
+/* Tab Title Bar */
+/* editing */
+.is-focused .workspace-leaf.mod-active .view-header-title {
+  color: var(--tab-text-color-focused-active);
+}
+
+/* not editing */
+.view-header-title,
+/* tabbed out */
+.workspace-leaf.mod-active .view-header-title {
+  color: var(--text-faint);
+}
