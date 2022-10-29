@@ -816,3 +816,7 @@ what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as ba
 .workspace-leaf.mod-active .view-header-title {
   color: var(--text-faint);
 }
+
+.MJX-TEX {
+  font-size: 130%;
+  }
