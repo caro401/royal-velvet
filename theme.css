@@ -400,11 +400,10 @@ blockquote,
   padding: 10px 20px;
   margin-inline-start: 30px;
   margin-inline-end: 30px;
-  border-left: 4px solid var(--purple);
 }
 
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote::before {
-  content: none;
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before{
+  border-left: 4px solid var(--purple)
 }
 
 .cm-s-obsidian span.cm-quote {
