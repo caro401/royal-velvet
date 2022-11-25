@@ -819,3 +819,231 @@ what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as ba
 .MJX-TEX {
   font-size: 130%;
   }
+
+
+
+  body {
+    /* --heading-font                    : "Lexend Deca Semibold"; */
+    /* --font-monospace                  : "JetBrains Mono"; */
+    /* --font-text                       : "iA Writer Quattro S"; */
+    --table-header-color              : var(--black);
+    /* --table-header-font               : var(--heading-font); */
+    /* --interactive-accent              : var(--XXX) !important; */
+    --interactive-accent-hover        : var(--orange) !important; /* hover on button */
+    --text-on-accent                  : var(--black) !important;
+    --background-modifier-border-hover: transparent;
+    --modal-border-color              : transparent;
+    --prompt-border-color             : transparent !important;
+    --background-modifier-border-focus: transparent !important;
+    --background-modifier-boder       : transparent !important;
+    /* --default-font                    : "Lexend Deca"; */
+    --input-shadow                    : none !important;
+    --blockquote-border-color         : none;
+    --XXX: #ff00ff;
+}
+
+/* ? */
+.kanban-plugin__autocomplete-item-active.kanban-plugin__ignore-click-outside em {
+  color: var(--text-on-accent) !important;
+}
+
+/* ? */
+.markdown-preview-sizer {
+  padding-bottom: 0 !important;
+  min-height    : fit-content !important;
+}
+
+/* 🚧 Dropdown Menu Icons */
+.menu-item-icon {
+  color: var(--green);
+}
+
+/* ❔ emphasis / italic text */
+em,
+.cm-s-obsidian .cm-em {
+  /* font-family: "iA Writer Quattro S" !important; */
+  font-style : italic !important;
+}
+
+/* 🚧 disabled menu "checkbox"  */
+.checkbox-container:not(.is-enabled) {
+  /* ? make this same color as dropdown menu background */
+  background-color: var(--blackXDark) !important;
+}
+
+/* 🚧 maybe even another color? */
+.suggestion-highlight,
+.search-result-file-matched-text {
+  /* color: var(--purple); */
+}
+
+/* ? */
+.explorable {
+  padding-right: 4px !important;
+  padding-left : 4px !important;
+}
+
+/* ✅ */
+img {
+  display      : block !important;
+  margin-left  : auto !important;
+  margin-right : auto !important;
+  margin-top   : 20px !important;
+  margin-bottom: 20px !important;
+  border-radius: var(--radius-s);
+}
+
+/* 🚧 */
+.math.math-block.cm-embed-block,
+.markdown-preview-view .math.math-block mjx-container.MathJax {
+  background-color: var(--blackDark);
+  border-radius   : var(--radius-s);
+  border-left     : var(--radius-s) solid var(--purple);
+  border-right    : var(--radius-s) solid var(--pink); /*? why different color? */
+}
+
+/* 🚧make relative */
+.markdown-preview-view .math.math-block mjx-container mjx-math.MJX-TEX {
+/* ? make relative?, also see blockquote and callout block*/
+  padding-top   : 14px;
+  padding-bottom: 14px;
+}
+
+/* 🚧blockquote preview mode */
+blockquote,
+.HyperMD-quote {
+  border-top-color   : transparent !important;
+  border-bottom-color: transparent !important;
+  border-right-color : transparent !important;
+  border-radius      : var(--radius-s) !important;
+  border-left-color  : var(--red) !important; /* ? use different color?*/
+}
+
+/* ? */
+.c-indment::before {
+  border-width: 2px !important;
+  border-color: var(--red) !important;
+}
+
+/* 🚧 list indent guide (kinda huge tho) */
+.markdown-rendered.show-indentation-guide li>ul::before,
+.markdown-rendered.show-indentation-guide li>ol::before {
+  border-width: 2px !important;
+  border-color: var(--red) !important;
+  left        : -13px;
+}
+
+/* some heading in settings menu and somewhere else...  */
+/* 🚧 make this h1 style */
+.setting-item-heading .setting-item-name,
+.vertical-tab-header-group-title {
+  text-transform: uppercase !important;
+}
+
+/* ? */
+.cm-formatting-quote {
+  color: var(--XXX) !important;
+}
+
+/* ? where */
+.cm-em.cm-strong,
+strong>em {
+  color: var(--red);
+}
+
+/* ? why this changes nothing? */
+mjx-container.MathJax {
+  -webkit-text-fill-color: var(--text-normal);
+}
+
+/* ❔ emphasis font */
+em,
+.cm-em {
+  font-family: var(--font-text) !important;
+}
+
+/* 🚧internal links */
+.cm-hmd-internal-link,
+.cm-hmd-internal-link .cm-underline,
+a.internal-link {
+  -webkit-text-fill-color: var(--orange) !important;
+  background             : transparent !important; /* this fixes missing underline in headings */
+  /* text-decoration        : none !important; */
+}
+
+/* internal link hover */
+:is(.cm-hmd-internal-link .cm-underline,
+  .cm-hmd-internal-link,
+  a.internal-link):hover {
+  /* text-decoration-line   : none !important; */
+  -webkit-text-fill-color: var(--yellow) !important;
+}
+/* unresolved link is being overwritten by this */
+
+
+/* 🚧 weblink */
+.cm-link,
+.cm-link .cm-underline,
+a.external-link {
+  -webkit-text-fill-color: var(--green) !important;
+  background             : transparent !important;
+  /* text-decoration        : none !important;
+  text-decoration-line   : none !important; */
+}
+
+:is(.cm-link,
+  .cm-link .cm-underline,
+  a.external-link):hover {
+  -webkit-text-fill-color: var(--greenSecondary) !important;
+  text-decoration        : underline !important;
+}
+
+/* ? */
+mjx-mtable>*>mjx-itable mjx-mtr:not(:first-of-type) mjx-mtd {
+  padding-top: 1.2em !important;
+}
+
+/* ✅ foreground color titlebar close button */
+.titlebar-button.mod-close:hover {
+  color: var(--black);
+}
+
+/* ❔ table stuff */
+table {
+  margin-left  : auto;
+  margin-right : auto;
+  border-width : 2px;
+  text-align   : center;
+  font-family  : var(--font-interface);
+  border-radius: var(--radius-s);
+}
+
+.cm-blockid,
+.titlebar-text {
+  opacity: 0;
+}
+
+.cm-active .cm-blockid,
+.cm-blockid:hover {
+  opacity: 1;
+}
+
+table tr th {
+  font-family: var(--heading-font);
+  font-size  : 1.2em;
+  padding    : 8px 15px !important;
+  border     : none !important;
+  text-align : center !important;
+  font-size  : var(--font-ui-medium) !important;
+}
+
+.markdown-source-view.cm-s-obsidian.mod-cm6 .HyperMD-table-row.HyperMD-table-row-0.cm-line {
+  color: var(--text-normal) !important
+}
+
+/* ? */
+.cm-s-obsidian .external-link,
+a.external-link {
+  background-image: none !important;
+  padding-right   : 0px !important;
+}
