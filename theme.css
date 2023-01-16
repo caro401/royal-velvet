@@ -505,11 +505,10 @@ cite {
 /*--Tables--*/
 table {
   outline: var(--size-4-1) solid var(--blackDark);
-  outline-offset: -2px; /* otherwise th background color clips somehow */
-  margin-left  : auto;
-  margin-right : auto;
+  outline-offset: -2px; /* should be -4px but otherwise th background color clips somehow */
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 4px;
-
 }
 
 thead {
@@ -518,6 +517,19 @@ thead {
     var(--purple) 0,
     var(--pink) 100%
   );
+}
+
+/* Dataview Plugin table head */
+thead.table-view-thead{
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--cyan) 0,
+    var(--purple) 100%
+  );
+}
+
+thead .dataview.small-text {
+  color: var(--table-header-color);
 }
 
 /* striped table rows */
@@ -533,10 +545,7 @@ thead {
 
 .markdown-preview-view th,
 .markdown-preview-view td {
-  /* padding-top: 1ch;
-  padding-bottom: 1ch; */
   border: unset;
-  /* text-align: left; */
 }
 
 /* Table Head Row */
@@ -546,6 +555,16 @@ thead {
   font-size  : 1em;
   padding: var(--size-2-3) var(--size-4-2);
   border: none;
+}
+
+/* Table Head Row Dataview Plugin */
+.table-view-table > thead > tr > th {
+  font-size  : 1em;
+}
+
+/* Table Head Row when editing table contents */
+.markdown-source-view.cm-s-obsidian.mod-cm6 .HyperMD-table-row.HyperMD-table-row-0.cm-line {
+  color: var(--text-normal);
 }
 
 /*--Tags--*/
