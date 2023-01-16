@@ -111,6 +111,9 @@ body {
   ); /*Active Search Match (Preview Mode)*/
   --text-selection: var(--purple-200); /*Text Selections*/
 
+  /* other custom vars */
+  --indentation-guide-opacity: 10%;
+
   /* --Obsidian Variables-- */
   --interactive-normal: var(--blackDark); /*Button Color*/
   --interactive-hover: var(--blackXDark); /*Button Hovered Color*/
@@ -862,6 +865,59 @@ ul ul ul ul ul ul ul input[type=checkbox]{
 .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
   background-color: var(--checkbox-color);
   border-color: var(--checkbox-color);
+}
+
+/* indentation guides */
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+1):before,
+.markdown-rendered.show-indentation-guide li ul::before,
+.markdown-rendered.show-indentation-guide li ol::before {
+  border-color: var(--pink);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+2):before,
+.markdown-rendered.show-indentation-guide li li ul::before,
+.markdown-rendered.show-indentation-guide li li ol::before {
+  border-color: var(--orange);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+3):before,
+.markdown-rendered.show-indentation-guide li li li ul::before,
+.markdown-rendered.show-indentation-guide li li li ol::before {
+  border-color: var(--yellow);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+4):before,
+.markdown-rendered.show-indentation-guide li li li li ul::before,
+.markdown-rendered.show-indentation-guide li li li li ol::before {
+  border-color: var(--green);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+5):before,
+.markdown-rendered.show-indentation-guide li li li li li ul::before,
+.markdown-rendered.show-indentation-guide li li li li li ol::before {
+  border-color: var(--cyan);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+6):before,
+.markdown-rendered.show-indentation-guide li li li li li li ul::before,
+.markdown-rendered.show-indentation-guide li li li li li li ol::before {
+  border-color: var(--purple);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-rendered.show-indentation-guide li li li li li li li ul::before,
+.markdown-rendered.show-indentation-guide li li li li li li li ol::before {
+  border-color: var(--list-marker-color);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent.cm-active-indent::before {
+  opacity: 75%;
 }
 
 /* Search Suggestions Highlight */
