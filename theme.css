@@ -111,6 +111,7 @@ body {
   ); /*Active Search Match (Preview Mode)*/
   --text-selection: var(--purple-200); /*Text Selections*/
 
+  /* --Obsidian Variables-- */
   --interactive-normal: var(--blackDark); /*Button Color*/
   --interactive-hover: var(--blackXDark); /*Button Hovered Color*/
   --interactive-accent: var(--pink); /*Workspace Note Title Underline*/
@@ -123,21 +124,28 @@ body {
   --indentation-guide: var(--blackSecondary);
 
   --blockquote-border: var(--red);
-  --link-color: var(--orange);
+  --link-color: var(--orange); /* internal link */
   --link-color-hover: var(--orangeSecondary);
   --link-unresolved-color: var(--yellow-700);
   --link-unresolved-hover: var(--yellow);
   --link-external-color: var(--green);
   --link-external-color-hover: var(--greenSecondary);
-  --table-header-color              : var(--black);
-  --text-on-accent                  : var(--black);
+  --table-header-color: var(--black);
+  --text-on-accent: var(--black);
 
   --background-modifier-border-hover: transparent;
-  --modal-border-color              : transparent;
-  --prompt-border-color             : transparent;
+  --modal-border-color: transparent;
+  --prompt-border-color: transparent;
   --background-modifier-border-focus: transparent; /* border around active input boxes */
+  --background-modifier-border: transparent; /* separator lines in eg. setting menu */
+  --input-shadow: none;
+  --blockquote-border-color: none;
+  --ribbon-background : var(--background-secondary-alt);
+  --ribbon-background-collapsed: var(--background-secondary-alt);
   --code-normal : var(--purple-pink);
   --code-size: 100%;
+
+  --hr-color: var(--orange) /* Horizontal Line */
 
 }
 
@@ -228,6 +236,11 @@ em,
 .cm-s-obsidian .cm-em,
 .cm-s-obsidian .cm-quote.cm-em {
   color: var(--cyan);
+}
+
+.cm-em.cm-strong,
+strong>em {
+  color: var(--red);
 }
 
 /*Highlight*/
@@ -452,11 +465,6 @@ a.external-link {
   -webkit-text-fill-color: var(--link-external-color-hover);
 }
 
-/*--Lists--*/
-.markdown-preview-view .task-list-item-checkbox:checked,
-input[type="checkbox"]:checked {
-  filter: hue-rotate(36deg) brightness(1.5);
-}
 /*--Blockquotes--*/
 blockquote,
 .markdown-preview-view blockquote {
@@ -631,9 +639,14 @@ input[type=range]::-webkit-slider-thumb:active {
   background-color: var(--blackSecondary);
 }
 
+/* image */
 img,
 .markdown-source-view.mod-cm6 .cm-content > img {
   margin: 1ch;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--radius-s);
 }
 
 /* Don't put margin around icon folder emoji icons */
@@ -921,53 +934,41 @@ what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as ba
   color: var(--text-faint);
 }
 
-.MJX-TEX {
-  font-size: 130%;
-  }
-
 /* border that extends into titlebar */
 .workspace-leaf-resize-handle {
   border-color: transparent;
 }
 
-/* ✅ disabled menu "checkbox" background */
+/* disabled menu "checkbox" background */
 .checkbox-container:not(.is-enabled) {
   background-color: var(--blackDark);
 }
 
-/* ✅ */
+/* disabled menu "checkbox" */
 .checkbox-container:not(.is-enabled):hover {
   background-color: var(--blackXDark);
 }
 
-/* ✅ */
-img {
-  display      : block ;
-  margin-left  : auto ;
-  margin-right : auto;
-  /* this messes with emoji folder icon */
-  /* margin-top   : 20px !important;
-  margin-bottom: 20px !important; */
-  border-radius: var(--radius-s);
+.MJX-TEX {
+  font-size: 130%;
 }
 
-/* ✅ */
+/* math block */
 .math.math-block.cm-embed-block,
 .markdown-preview-view .math.math-block mjx-container.MathJax {
   background-color: var(--blackDark);
-  border-radius   : var(--radius-s);
-  border-left     : var(--radius-s) solid var(--purple);
-  border-right    : var(--radius-s) solid var(--pink); /*? why different color? */
+  border-radius: var(--radius-s);
+  border-left: var(--radius-s) solid var(--purple);
+  border-right: var(--radius-s) solid var(--pink);
 }
 
-/* ✅ math block preview mode */
+/* math block preview mode */
 .markdown-preview-view .math.math-block mjx-container mjx-math.MJX-TEX {
-  padding-top   : var(--size-4-4);
+  padding-top: var(--size-4-4);
   padding-bottom: var(--size-4-4);
 }
 
-/* some heading in settings menu and somewhere else? */
-/* ✅ make this h1 style */
+/* some heading in settings menu */
 .setting-item-heading .setting-item-name,
 .vertical-tab-header-group-title {
   text-transform: uppercase;
@@ -981,55 +982,17 @@ img {
   );
 }
 
-/* ✅ ">" on blockquote in editing mode */
+/* ">" on blockquote in editing mode */
 .cm-formatting-quote {
   color: var(--text-muted);
 }
 
-/* ✅ foreground color titlebar close button */
+/* foreground color of titlebar close button */
 .titlebar-button.mod-close:hover {
   color: var(--black);
 }
 
-/* ✅ ***bold text*** */
-.cm-em.cm-strong,
-strong>em {
-  color: var(--red);
-}
-
-.markdown-source-view.cm-s-obsidian.mod-cm6 .HyperMD-table-row.HyperMD-table-row-0.cm-line {
-  color: var(--text-normal);
-}
-
-/* ? */
-.kanban-plugin__autocomplete-item-active.kanban-plugin__ignore-click-outside em {
-  color: var(--text-on-accent) !important;
-}
-
-/* ? maybe something maths related */
-.explorable {
-  padding-right: 4px;
-  padding-left : 4px;
-}
-
-/* ? */
-.c-indment::before {
-  border-width: 2px !important;
-  border-color: var(--red) !important;
-}
-
-/* ? */
-mjx-container.MathJax {
-  -webkit-text-fill-color: var(--text-normal);
-}
-
-/* ? */
-mjx-mtable>*>mjx-itable mjx-mtr:not(:first-of-type) mjx-mtd {
-  padding-top: 1.2em;
-}
-
-/* ? */
-.cm-active .cm-blockid,
-.cm-blockid:hover {
-  opacity: 1;
+/* active line number in editing mode */
+.markdown-source-view.mod-cm6 .cm-gutterElement.cm-active {
+  color: var(--cyan);
 }
