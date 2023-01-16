@@ -76,6 +76,8 @@ body {
   --cyan: rgb(128, 255, 234);
   --cyan-600: rgba(128, 255, 234, 0.6);
 
+  --purple-pink: #ca80df;
+
   --background-modifier-cover: var(--blackXDark); /*Obsidian Title Bar Bg*/
   --background-primary: var(--black); /*Note background*/
   --background-primary-alt: var(--blackDark); /*Note Title background active*/
@@ -134,9 +136,8 @@ body {
   --modal-border-color              : transparent;
   --prompt-border-color             : transparent;
   --background-modifier-border-focus: transparent; /* border around active input boxes */
-  --background-modifier-border      : transparent; /* separator lines in eg. setting menu */
-  --input-shadow                    : none;
-  --blockquote-border-color         : none;
+  --code-normal : var(--purple-pink);
+  --code-size: 100%;
 
 }
 
@@ -311,25 +312,36 @@ h6,
   );
 } /*Source Mode*/
 
-/*--Horizontal Line--*/
-hr,
-.hr.cm-line,
-.HyperMD-hr-bg {
-  border-color: var(--orange);
-}
-
-/*HR Line Text*/
-.cm-s-obsidian pre.HyperMD-hr {
-  color: var(--orange);
-}
-
 /*--Code--*/
-code,
-.cm-s-obsidian span.cm-inline-code,
-.cm-s-obsidian span.cm-quote.cm-inline-code,
-.markdown-preview-view code {
+/* *italicized inline code* */
+span.cm-em.cm-inline-code,
+.markdown-preview-view em>code {
   color: var(--cyan);
-  font-size: 100%;
+}
+
+/* **bold inline code** */
+span.cm-inline-code.cm-strong,
+.markdown-preview-view strong>code {
+  color: var(--pink);
+}
+
+/* ***bold italicized inline code*** */
+.cm-em.cm-inline-code.cm-strong,
+.markdown-preview-view strong>em>code{
+  color: var(--red);
+}
+
+/* ==highlight inline code== */
+span.cm-inline-code.cm-highlight,
+.markdown-preview-view mark>code{
+  color: var(--yellow);
+  /* background-color: transparent; */
+}
+
+/* ~~strikethrough inline code~~ */
+span.cm-inline-code.cm-strikethrough,
+.markdown-preview-view del>code{
+  color: var(--text-muted);
 }
 
 .markdown-preview-view pre,
@@ -343,9 +355,12 @@ code,
   padding-top: 1ch;
 }
 
-.cm-s-obsidian .HyperMD-codeblock-begin,
-.cm-s-obsidian .HyperMD-codeblock-end {
-  color: var(--cyan);
+/* code block and indented code in editing mode */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.markdown-rendered pre code,
+.cm-s-obsidian span.cm-inline-code.cm-hmd-indented-code {
+  color: var(--text-muted);
+  font-size: var(--font-smaller);
 }
 
 /*--inline code in headings--*/
