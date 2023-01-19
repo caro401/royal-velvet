@@ -560,6 +560,10 @@ thead .dataview.small-text {
   border: none;
 }
 
+.markdown-rendered th[align="left"] {
+  text-align: left;
+}
+
 /* Table Head Row Dataview Plugin */
 .table-view-table > thead > tr > th {
   font-size  : 1em;
