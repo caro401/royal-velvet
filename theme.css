@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 Royal Velvet
-Version 0.9.7 - Legacy version for Obsidian v0.15.9 or lower
+Version 0.10.0
 Created by @caro401
 Readme:
 https://github.com/caro401/royal-velvet
@@ -76,6 +76,8 @@ body {
   --cyan: rgb(128, 255, 234);
   --cyan-600: rgba(128, 255, 234, 0.6);
 
+  --purple-pink: #ca80df;
+
   --background-modifier-cover: var(--blackXDark); /*Obsidian Title Bar Bg*/
   --background-primary: var(--black); /*Note background*/
   --background-primary-alt: var(--blackDark); /*Note Title background active*/
@@ -109,16 +111,45 @@ body {
   ); /*Active Search Match (Preview Mode)*/
   --text-selection: var(--purple-200); /*Text Selections*/
 
+  /* other custom vars */
+  --indentation-guide-opacity: 10%;
+
+  /* --Obsidian Variables-- */
   --interactive-normal: var(--blackDark); /*Button Color*/
   --interactive-hover: var(--blackXDark); /*Button Hovered Color*/
   --interactive-accent: var(--pink); /*Workspace Note Title Underline*/
-  --interactive-accent-hover: var(--pinkSecondary); /*Menu Button Hover*/
+  --interactive-accent-hover: var(--orange); /*Menu Button Hover*/
   --interactive-success: var(--green);
 
   --scrollbar-bg: var(--black); /*Scrollbar Gutter Background*/
   --scrollbar-thumb-bg: var(--pink-100); /*Scrollbar Color*/
   --scrollbar-active-thumb-bg: var(--pink-300); /*Scrollbar Dragged Color*/
   --indentation-guide: var(--blackSecondary);
+
+  --blockquote-border: var(--red);
+  --link-color: var(--orange); /* internal link */
+  --link-color-hover: var(--orangeSecondary);
+  --link-unresolved-color: var(--yellow-700);
+  --link-unresolved-hover: var(--yellow);
+  --link-external-color: var(--green);
+  --link-external-color-hover: var(--greenSecondary);
+  --table-header-color: var(--black);
+  --text-on-accent: var(--black);
+
+  --background-modifier-border-hover: transparent;
+  --modal-border-color: transparent;
+  --prompt-border-color: transparent;
+  --background-modifier-border-focus: transparent; /* border around active input boxes */
+  --background-modifier-border: transparent; /* separator lines in eg. setting menu */
+  --input-shadow: none;
+  --blockquote-border-color: none;
+  --ribbon-background : var(--background-secondary-alt);
+  --ribbon-background-collapsed: var(--background-secondary-alt);
+  --code-normal : var(--purple-pink);
+  --code-size: 100%;
+
+  --hr-color: var(--orange) /* Horizontal Line */
+
 }
 
 /*Setting Dropdown*/
@@ -128,7 +159,7 @@ body {
 }
 
 .menu-item-icon {
-  color: var(--cyan-600);
+  color: var(--green);
 }
 
 /*--File Explorer--*/
@@ -210,6 +241,11 @@ em,
   color: var(--cyan);
 }
 
+.cm-em.cm-strong,
+strong>em {
+  color: var(--red);
+}
+
 /*Highlight*/
 .markdown-preview-view mark,
 .cm-s-obsidian .cm-highlight,
@@ -225,9 +261,8 @@ del {
 }
 
 /*--Headers/Headings--*/
-
 h1,
-.cm-header-1 {
+.cm-header-1, .inline-title {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -293,25 +328,36 @@ h6,
   );
 } /*Source Mode*/
 
-/*--Horizontal Line--*/
-hr,
-.hr.cm-line,
-.HyperMD-hr-bg {
-  border-color: var(--orange);
-}
-
-/*HR Line Text*/
-.cm-s-obsidian pre.HyperMD-hr {
-  color: var(--orange);
-}
-
 /*--Code--*/
-code,
-.cm-s-obsidian span.cm-inline-code,
-.cm-s-obsidian span.cm-quote.cm-inline-code,
-.markdown-preview-view code {
+/* *italicized inline code* */
+span.cm-em.cm-inline-code,
+.markdown-preview-view em>code {
   color: var(--cyan);
-  font-size: 100%;
+}
+
+/* **bold inline code** */
+span.cm-inline-code.cm-strong,
+.markdown-preview-view strong>code {
+  color: var(--pink);
+}
+
+/* ***bold italicized inline code*** */
+.cm-em.cm-inline-code.cm-strong,
+.markdown-preview-view strong>em>code{
+  color: var(--red);
+}
+
+/* ==highlight inline code== */
+span.cm-inline-code.cm-highlight,
+.markdown-preview-view mark>code{
+  color: var(--yellow);
+  /* background-color: transparent; */
+}
+
+/* ~~strikethrough inline code~~ */
+span.cm-inline-code.cm-strikethrough,
+.markdown-preview-view del>code{
+  color: var(--text-muted);
 }
 
 .markdown-preview-view pre,
@@ -325,9 +371,12 @@ code,
   padding-top: 1ch;
 }
 
-.cm-s-obsidian .HyperMD-codeblock-begin,
-.cm-s-obsidian .HyperMD-codeblock-end {
-  color: var(--cyan);
+/* code block and indented code in editing mode */
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock,
+.markdown-rendered pre code,
+.cm-s-obsidian span.cm-inline-code.cm-hmd-indented-code {
+  color: var(--text-muted);
+  font-size: var(--font-smaller);
 }
 
 /*--inline code in headings--*/
@@ -343,51 +392,89 @@ code,
 /*--Links--*/
 .cm-s-obsidian span.cm-hmd-internal-link,
 .cm-s-obsidian span.cm-quote.cm-hmd-internal-link,
+.cm-hmd-internal-link,
+.cm-hmd-internal-link .cm-underline,
 a.internal-link {
-  color: var(--orange);
+  /* color: var(--link-color); */
+  -webkit-text-fill-color: var(--link-color); 
 }
-.cm-s-obsidian span.cm-hmd-internal-link:hover,
-a.internal-link:hover {
-  color: var(--orangeSecondary);
+
+:is(.cm-s-obsidian span.cm-hmd-internal-link,
+  .cm-hmd-internal-link .cm-underline,
+  .cm-hmd-internal-link,
+  a.internal-link):hover {
+  /* color: var(--link-color-hover); */
+  /* text-decoration-line   : none !important; */
+  -webkit-text-fill-color: var(--link-color-hover);
 }
 
 .is-unresolved,
 span.is-unresolved > span.cm-hmd-internal-link,
 .markdown-source-view.mod-cm6 .is-unresolved,
+.markdown-source-view.mod-cm6 .is-unresolved .cm-underline,
 .markdown-preview-view .internal-link.is-unresolved,
 span.is-unresolved,
 a.internal-link.is-unresolved {
-  opacity: 1;
-  color: var(--yellow-700) !important;
+  /* opacity: 1; */
+  color: var(--link-unresolved-color);
+  -webkit-text-fill-color: var(--link-unresolved-color);
+  text-decoration-color: var(--link-unresolved-color);
+}
+
+:is(.is-unresolved,
+span.is-unresolved > span.cm-hmd-internal-link,
+.markdown-source-view.mod-cm6 .is-unresolved,
+.markdown-preview-view .internal-link.is-unresolved,
+.markdown-rendered .internal-link.is-unresolved,
+span.is-unresolved,
+a.internal-link.is-unresolved):hover {
+  text-decoration-color: var(--link-unresolved-hover);
+  color: var(--link-unresolved-hover);
+  -webkit-text-fill-color: var(--link-unresolved-hover);
+  
 }
 
 a.external-link,
+.cm-link,
+.cm-link .cm-underline,
 .cm-s-obsidian span.cm-link,
 .cm-s-obsidian span.cm-link.cm-quote,
 .cm-s-obsidian span.cm-url {
-  color: var(--green);
+  -webkit-text-fill-color: var(--link-external-color);
+  /* removes the link icon to the right */
+  background             : transparent;
 }
+
+/* link icon padding */
+.cm-s-obsidian .external-link,
+a.external-link {
+  background-image: none;
+  padding-right   : 0px;
+}
+
+/* ? */
 .cm-s-obsidian span.cm-url {
   text-decoration: unset;
 }
-.external-link:hover,
-.cm-s-obsidian span.cm-link:hover,
-.cm-s-obsidian span.cm-url:hover {
-  color: var(--greenSecondary);
+
+/* :is(<items>):hover */
+:is(.cm-link,
+  .cm-link .cm-underline,
+  .external-link,
+  .cm-s-obsidian span.cm-link,
+  .cm-s-obsidian span.cm-url
+
+):hover{
+  -webkit-text-fill-color: var(--link-external-color-hover);
 }
 
-/*--Lists--*/
-.markdown-preview-view .task-list-item-checkbox:checked,
-input[type="checkbox"]:checked {
-  filter: hue-rotate(36deg) brightness(1.5);
-}
 /*--Blockquotes--*/
 blockquote,
 .markdown-preview-view blockquote {
-  border: 1px solid;
-  border-left-width: 4px;
-  border-radius: 4px;
-  border-color: var(--purple);
+  border: 0 solid;
+  border-left-width: var(--size-4-1);
+  border-radius: var(--radius-s);
+  border-left-color  : var(--blockquote-border); /* ? use different color?*/
   background-color: var(--blackDark);
   padding: 10px 20px;
   margin-inline-start: 30px;
@@ -401,8 +488,12 @@ blockquote,
   padding: 10px 20px;
   margin-inline-start: 30px;
   margin-inline-end: 30px;
-  border-left: 4px solid var(--purple);
 }
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before{
+  border-left: var(--size-4-1) solid var(--blockquote-border)
+}
+
 .cm-s-obsidian span.cm-quote {
   color: var(--text-normal);
 }
@@ -416,8 +507,11 @@ cite {
 
 /*--Tables--*/
 table {
-  outline: 3px solid var(--blackDark);
-  outline-offset: -2px;
+  outline: var(--size-4-1) solid var(--blackDark);
+  outline-offset: -2px; /* should be -4px but otherwise th background color clips somehow */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
 }
 
 thead {
@@ -428,19 +522,56 @@ thead {
   );
 }
 
-tbody tr:nth-child(odd) {
+/* Dataview Plugin table head */
+thead.table-view-thead{
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--cyan) 0,
+    var(--purple) 100%
+  );
+}
+
+thead .dataview.small-text {
+  color: var(--table-header-color);
+}
+
+/* striped table rows */
+.markdown-rendered tbody tr:nth-child(odd),
+.markdown-rendered tbody tr:nth-child(odd):hover {
   background-color: var(--blackDark);
 }
-tbody tr:nth-child(even) {
+
+.markdown-rendered tbody tr:nth-child(even),
+.markdown-rendered tbody tr:nth-child(even):hover{
   background-color: var(--black);
 }
 
 .markdown-preview-view th,
 .markdown-preview-view td {
-  padding-top: 1ch;
-  padding-bottom: 1ch;
   border: unset;
+}
+
+/* Table Head Row */
+.markdown-rendered th {
+  text-align: center;
+  font-weight: 700;
+  font-size  : 1em;
+  padding: var(--size-2-3) var(--size-4-2);
+  border: none;
+}
+
+.markdown-rendered th[align="left"] {
   text-align: left;
+}
+
+/* Table Head Row Dataview Plugin */
+.table-view-table > thead > tr > th {
+  font-size  : 1em;
+}
+
+/* Table Head Row when editing table contents */
+.markdown-source-view.cm-s-obsidian.mod-cm6 .HyperMD-table-row.HyperMD-table-row-0.cm-line {
+  color: var(--text-normal);
 }
 
 /*--Tags--*/
@@ -513,20 +644,35 @@ input[type="search"],
 input[type="email"],
 input[type="password"],
 input[type="number"] {
-  border: 1px solid var(--pink);
+  /* border: 1px solid var(--pink-400); */
+  background-color: var(--blackXDark);
 }
 
 input[type="range"] {
   background-color: var(--text-faint);
 }
 
+/* Slider in settings menu; doesn't work on mobile */
+input[type=range]::-webkit-slider-thumb {
+  background: var(--pink);
+}
+input[type=range]::-webkit-slider-thumb:hover,
+input[type=range]::-webkit-slider-thumb:active {
+  background: var(--pinkSecondary);
+}
+
 .workspace-leaf-resize-handle:hover {
   background-color: var(--blackSecondary);
 }
 
+/* image */
 img,
 .markdown-source-view.mod-cm6 .cm-content > img {
   margin: 1ch;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--radius-s);
 }
 
 /* Don't put margin around icon folder emoji icons */
@@ -611,9 +757,178 @@ ol ol ol ol ol ol li::marker,
   color: var(--purple);
 }
 
+/* 7th level and higher: grey */
+ul ul ul ul ul ul ul li::marker,
+ol ol ol ol ol ol ol li::marker,
+.HyperMD-list-line-7 .list-bullet::after,
+.HyperMD-list-line.HyperMD-list-line-7 .cm-formatting-list {
+  color: var(--list-marker-color);
+}
+
+/* 1.0.0 nested list color variation fix */
+.HyperMD-list-line-1 .list-bullet::after,
+.has-list-bullet .list-bullet:after {
+  background-color:var(--pink);
+}
+
+.HyperMD-list-line-2 .list-bullet::after,
+.has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--orange);
+}
+
+.HyperMD-list-line-3 .list-bullet::after,
+.has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--yellow);
+}
+
+.HyperMD-list-line-4 .list-bullet::after,
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--green);
+}
+
+.HyperMD-list-line-5 .list-bullet::after,
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--cyan);
+}
+
+.HyperMD-list-line-6 .list-bullet::after,
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--purple);
+}
+
+/* 7th level and higher: grey */
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+  background-color: var(--list-marker-color);
+}
+
+
+/*--Coloured Checkboxes--*/
+ul input[type=checkbox],
+.HyperMD-list-line-1 input[type=checkbox]{
+  border-color: var(--pink);
+}
+.HyperMD-list-line-1 input[type=checkbox][data-task=x],
+.has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--pink);
+  border-color: var(--pink);
+}
+
+ul ul input[type=checkbox],
+.HyperMD-list-line-2 input[type=checkbox]{
+  border-color: var(--orange);
+}
+.HyperMD-list-line-2 input[type=checkbox][data-task=x],
+.has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--orange);
+  border-color: var(--orange);
+}
+
+ul ul ul input[type=checkbox],
+.HyperMD-list-line-3 input[type=checkbox]{
+  border-color: var(--yellow);
+}
+.HyperMD-list-line-3 input[type=checkbox][data-task=x],
+.has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--yellow);
+  border-color: var(--yellow);
+}
+
+ul ul ul ul input[type=checkbox],
+.HyperMD-list-line-4 input[type=checkbox]{
+  border-color: var(--green);
+}
+.HyperMD-list-line-4 input[type=checkbox][data-task=x],
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--green);
+  border-color: var(--green);
+}
+
+ul ul ul ul ul input[type=checkbox],
+.HyperMD-list-line-5 input[type=checkbox]{
+  border-color: var(--cyan);
+}
+.HyperMD-list-line-5 input[type=checkbox][data-task=x],
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--cyan);
+  border-color: var(--cyan);
+}
+
+ul ul ul ul ul ul input[type=checkbox],
+.HyperMD-list-line-6 input[type=checkbox]{
+  border-color: var(--purple);
+}
+.HyperMD-list-line-6 input[type=checkbox][data-task=x],
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--purple);
+  border-color: var(--purple);
+}
+
+ul ul ul ul ul ul ul input[type=checkbox]{
+  border-color: var(--checkbox-border-color);
+}
+.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+  background-color: var(--checkbox-color);
+  border-color: var(--checkbox-color);
+}
+
+/* indentation guides */
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+1):before,
+.markdown-rendered.show-indentation-guide li ul::before,
+.markdown-rendered.show-indentation-guide li ol::before {
+  border-color: var(--pink);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+2):before,
+.markdown-rendered.show-indentation-guide li li ul::before,
+.markdown-rendered.show-indentation-guide li li ol::before {
+  border-color: var(--orange);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+3):before,
+.markdown-rendered.show-indentation-guide li li li ul::before,
+.markdown-rendered.show-indentation-guide li li li ol::before {
+  border-color: var(--yellow);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+4):before,
+.markdown-rendered.show-indentation-guide li li li li ul::before,
+.markdown-rendered.show-indentation-guide li li li li ol::before {
+  border-color: var(--green);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+5):before,
+.markdown-rendered.show-indentation-guide li li li li li ul::before,
+.markdown-rendered.show-indentation-guide li li li li li ol::before {
+  border-color: var(--cyan);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+6):before,
+.markdown-rendered.show-indentation-guide li li li li li li ul::before,
+.markdown-rendered.show-indentation-guide li li li li li li ol::before {
+  border-color: var(--purple);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-rendered.show-indentation-guide li li li li li li li ul::before,
+.markdown-rendered.show-indentation-guide li li li li li li li ol::before {
+  border-color: var(--list-marker-color);
+  opacity: var(--indentation-guide-opacity);
+}
+
+.markdown-source-view.mod-cm6 .cm-indent.cm-active-indent::before {
+  opacity: 75%;
+}
+
+/* Search Suggestions Highlight */
 .suggestion-highlight,
 .search-result-file-matched-text {
   color: var(--pink);
+  /* or purple? */
 }
 
 /*
@@ -669,4 +984,94 @@ what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as ba
     var(--purple) 0,
     var(--pink) 100%
   );
+}
+
+/* Tab Title */
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.is-focused .workspace-leaf.mod-active .view-header-title {
+  font-weight: 700;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(var(--gradientDegree),
+      var(--pink) 0,
+      var(--orange) 100%);
+}
+
+
+/* Tab Title Bar */
+/* editing */
+.is-focused .workspace-leaf.mod-active .view-header-title {
+  color: var(--tab-text-color-focused-active);
+}
+
+/* not editing */
+.view-header-title,
+/* tabbed out */
+.workspace-leaf.mod-active .view-header-title {
+  color: var(--text-faint);
+}
+
+/* border that extends into titlebar */
+.workspace-leaf-resize-handle {
+  border-color: transparent;
+}
+
+/* disabled menu "checkbox" background */
+.checkbox-container:not(.is-enabled) {
+  background-color: var(--blackDark);
+}
+
+/* disabled menu "checkbox" */
+.checkbox-container:not(.is-enabled):hover {
+  background-color: var(--blackXDark);
+}
+
+.MJX-TEX {
+  font-size: 130%;
+}
+
+/* math block */
+.math.math-block.cm-embed-block,
+.markdown-preview-view .math.math-block mjx-container.MathJax {
+  background-color: var(--blackDark);
+  border-radius: var(--radius-s);
+  border-left: var(--radius-s) solid var(--purple);
+  border-right: var(--radius-s) solid var(--pink);
+}
+
+/* math block preview mode */
+.markdown-preview-view .math.math-block mjx-container mjx-math.MJX-TEX {
+  padding-top: var(--size-4-4);
+  padding-bottom: var(--size-4-4);
+}
+
+/* some heading in settings menu */
+.setting-item-heading .setting-item-name,
+.vertical-tab-header-group-title {
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--pink) 0,
+    var(--orange) 100%
+  );
+}
+
+/* ">" on blockquote in editing mode */
+.cm-formatting-quote {
+  color: var(--text-muted);
+}
+
+/* foreground color of titlebar close button */
+.titlebar-button.mod-close:hover {
+  color: var(--black);
+}
+
+/* active line number in editing mode */
+.markdown-source-view.mod-cm6 .cm-gutterElement.cm-active {
+  color: var(--cyan);
 }

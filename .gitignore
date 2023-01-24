@@ -7,3 +7,6 @@ package-lock.json
 
 # Mac
 .DS_Store
+
+/.misc
+*.ps1

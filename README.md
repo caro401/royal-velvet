@@ -25,6 +25,6 @@ If you use emoji in headings, you will need to add a plugin to make these displa
 
 If you have any issues or suggestions, please [submit an issue](https://github.com/caro401/royal-velvet/issues/new) or raise a [pull request](https://github.com/caro401/royal-velvet/pulls/).
 
-I don't use many plugins or advanced features of Obsidian, so there's defintely some usecases that won't look good - please let me know!
+I don't use many plugins or advanced features of Obsidian, so there's definitely some usecases that won't look good - please let me know!
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/U6U7BUEZ6)
