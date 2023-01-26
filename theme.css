@@ -123,6 +123,16 @@ body {
 
   --purple-pink: #ca80df;
 
+  --core-saturation: 100%;
+  --core-lightness: 75.1%;
+  --seven-split-pink: hsl(330.20, var(--core-lightness), var(--core-saturation));
+  --seven-split-orange: hsl(21.63, var(--core-lightness), var(--core-saturation));
+  --seven-split-yellow: hsl(73.06, var(--core-lightness), var(--core-saturation));
+  --seven-split-green: hsl(124.49, var(--core-lightness), var(--core-saturation));
+  --seven-split-cyan: hsl(175.91, var(--core-lightness), var(--core-saturation));
+  --seven-split-purple: hsl(227.34, var(--core-lightness), var(--core-saturation));
+  --seven-split-seventh: hsl(278.77, var(--core-lightness), var(--core-saturation));
+
   --background-modifier-cover: var(--blackXDark); /*Obsidian Title Bar Bg*/
   --background-primary: var(--black); /*Note background*/
   --background-primary-alt: var(--blackDark); /*Note Title background active*/
@@ -315,19 +325,19 @@ body:not(.doc-title-disable) .inline-title {
 body.doc-title-accent .inline-title {
   background-image: linear-gradient(
     var(--gradientDegree),
-    hsl(calc(var(--accent-h) + 30), 100%, 75.1%) 0,
-    hsl(calc(var(--accent-h) - 30), 100%, 75.1%) 100%
+    hsl(calc(var(--accent-h) + 30), var(--core-lightness), var(--core-saturation)) 0,
+    hsl(calc(var(--accent-h) - 30), var(--core-lightness), var(--core-saturation)) 100%
   );
 }
 
 body.doc-title-match {
-  --pink: hsl(330.20, 100%, 75.1%);
-  --orange: hsl(21.63, 100%, 75.1%);
-  --yellow: hsl(73.06, 100%, 75.1%);
-  --green: hsl(124.49, 100%, 75.1%);
-  --cyan: hsl(175.91, 100%, 75.1%);
-  --purple: hsl(227.34, 100%, 75.1%);
-  --seventh: hsl(278.77, 100%, 75.1%);
+  --pink: var(--seven-split-pink);
+  --orange: var(--seven-split-orange);
+  --yellow: var(--seven-split-yellow);
+  --green: var(--seven-split-green);
+  --cyan: var(--seven-split-cyan);
+  --purple: var(--seven-split-purple);
+  --seventh: var(--seven-split-seventh);
 }
 
 body.doc-title-match .inline-title {
