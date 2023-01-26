@@ -125,13 +125,13 @@ body {
 
   --core-saturation: 100%;
   --core-lightness: 75.1%;
-  --seven-split-pink: hsl(330.20, var(--core-lightness), var(--core-saturation));
-  --seven-split-orange: hsl(21.63, var(--core-lightness), var(--core-saturation));
-  --seven-split-yellow: hsl(73.06, var(--core-lightness), var(--core-saturation));
-  --seven-split-green: hsl(124.49, var(--core-lightness), var(--core-saturation));
-  --seven-split-cyan: hsl(175.91, var(--core-lightness), var(--core-saturation));
-  --seven-split-purple: hsl(227.34, var(--core-lightness), var(--core-saturation));
-  --seven-split-seventh: hsl(278.77, var(--core-lightness), var(--core-saturation));
+  --seven-split-pink: hsl(330.20, var(--core-saturation), var(--core-lightness));
+  --seven-split-orange: hsl(21.63, var(--core-saturation), var(--core-lightness));
+  --seven-split-yellow: hsl(73.06, var(--core-saturation), var(--core-lightness));
+  --seven-split-green: hsl(124.49, var(--core-saturation), var(--core-lightness));
+  --seven-split-cyan: hsl(175.91, var(--core-saturation), var(--core-lightness));
+  --seven-split-purple: hsl(227.34, var(--core-saturation), var(--core-lightness));
+  --seven-split-seventh: hsl(278.77, var(--core-saturation), var(--core-lightness));
 
   --background-modifier-cover: var(--blackXDark); /*Obsidian Title Bar Bg*/
   --background-primary: var(--black); /*Note background*/
@@ -325,8 +325,8 @@ body:not(.doc-title-disable) .inline-title {
 body.doc-title-accent .inline-title {
   background-image: linear-gradient(
     var(--gradientDegree),
-    hsl(calc(var(--accent-h) + 30), var(--core-lightness), var(--core-saturation)) 0,
-    hsl(calc(var(--accent-h) - 30), var(--core-lightness), var(--core-saturation)) 100%
+    hsl(calc(var(--accent-h) + 30), var(--core-saturation), var(--core-lightness)) 0,
+    hsl(calc(var(--accent-h) - 30), var(--core-saturation), var(--core-lightness)) 100%
   );
 }
 
