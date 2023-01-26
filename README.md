@@ -21,6 +21,22 @@ If you use emoji in headings, you will need to add a plugin to make these displa
 }
 ```
 
+## Customization
+
+Customization options are made available by [The Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings).
+
+### Inline Document Title Color
+
+The inline document title's color can be set as any of the following;
+
+- **Disabled** - uses normal text color
+- **Custom color** - based on the hue of your configured accent color
+- **Match with the heading level color pattern** - adjusts all heading colors slightly
+- **Rainbow**
+- **Same as a specific heading level**
+
+By default, it is set to the same color as the level 1 heading.
+
 ## Feedback
 
 If you have any issues or suggestions, please [submit an issue](https://github.com/caro401/royal-velvet/issues/new) or raise a [pull request](https://github.com/caro401/royal-velvet/pulls/).

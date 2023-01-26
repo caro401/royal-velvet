@@ -24,6 +24,51 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ────────────────────────────────────────────────────── */
 
+/* @settings
+
+name: Royal Velvet
+id: royal-velvet
+settings:
+  -
+    id: inline-document-title-color
+    title: Inline Document Title Color
+    description: Change the color of the inline document title to match another heading or a custom hue.
+    type: class-select
+    allowEmpty: false
+    default: doc-title-h1
+    options:
+      -
+        label: Disabled
+        value: doc-title-disable
+      -
+        label: Accent Color (hue)
+        value: doc-title-accent
+      -
+        label: match headings
+        value: doc-title-match
+      -
+        label: Rainbow
+        value: doc-title-rainbow
+      -
+        label: Heading 1
+        value: doc-title-h1
+      -
+        label: Heading 2
+        value: doc-title-h2
+      -
+        label: Heading 3
+        value: doc-title-h3
+      -
+        label: Heading 4
+        value: doc-title-h4
+      -
+        label: Heading 5
+        value: doc-title-h5
+      -
+        label: Heading 6
+        value: doc-title-h6
+*/
+
 /*Fonts*/
 
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
@@ -261,8 +306,70 @@ del {
 }
 
 /*--Headers/Headings--*/
+body:not(.doc-title-disable) .inline-title {
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+body.doc-title-accent .inline-title {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    hsl(calc(var(--accent-h) + 30), 100%, 75.1%) 0,
+    hsl(calc(var(--accent-h) - 30), 100%, 75.1%) 100%
+  );
+}
+
+body.doc-title-match {
+  --pink: hsl(330.20, 100%, 75.1%);
+  --orange: hsl(21.63, 100%, 75.1%);
+  --yellow: hsl(73.06, 100%, 75.1%);
+  --green: hsl(124.49, 100%, 75.1%);
+  --cyan: hsl(175.91, 100%, 75.1%);
+  --purple: hsl(227.34, 100%, 75.1%);
+  --seventh: hsl(278.77, 100%, 75.1%);
+}
+
+body.doc-title-match .inline-title {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--seventh) 0,
+    var(--pink) 100%
+  );
+}
+
+body.doc-title-match h6,
+body.doc-title-match .cm-header-6 {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--purple) 0,
+    var(--seventh) 100%
+  );
+}
+
+body.doc-title-rainbow .inline-title {
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--pink) 0,
+    var(--orange) 8.33%,
+    var(--yellow) 16.66%,
+    var(--green) 25%,
+    var(--cyan) 33.33%,
+    var(--purple) 41.66%,
+    var(--pink) 50%,
+    var(--orange) 58.33%,
+    var(--yellow) 66.66%,
+    var(--green) 75%,
+    var(--cyan) 83.33%,
+    var(--purple) 91.66%,
+    var(--pink) 100%
+  );
+}
+
 h1,
-.cm-header-1, .inline-title {
+.cm-header-1,
+body.doc-title-h1 .inline-title,
+body:not([class*="doc-title"]) .inline-title {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -272,8 +379,10 @@ h1,
     var(--orange) 100%
   );
 } /*Source Mode*/
+
 h2,
-.cm-header-2 {
+.cm-header-2,
+body.doc-title-h2 .inline-title {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -283,8 +392,10 @@ h2,
     var(--yellow) 100%
   );
 } /*Source Mode*/
+
 h3,
-.cm-header-3 {
+.cm-header-3,
+body.doc-title-h3 .inline-title {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -294,8 +405,10 @@ h3,
     var(--green) 100%
   );
 } /*Source Mode*/
+
 h4,
-.cm-header-4 {
+.cm-header-4,
+body.doc-title-h4 .inline-title {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -305,8 +418,10 @@ h4,
     var(--cyan) 100%
   );
 } /*Source Mode*/
+
 h5,
-.cm-header-5 {
+.cm-header-5,
+body.doc-title-h5 .inline-title {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -316,8 +431,10 @@ h5,
     var(--purple) 100%
   );
 } /*Source Mode*/
+
 h6,
-.cm-header-6 {
+.cm-header-6,
+body.doc-title-h6 .inline-title {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -396,7 +513,7 @@ span.cm-inline-code.cm-strikethrough,
 .cm-hmd-internal-link .cm-underline,
 a.internal-link {
   /* color: var(--link-color); */
-  -webkit-text-fill-color: var(--link-color); 
+  -webkit-text-fill-color: var(--link-color);
 }
 
 :is(.cm-s-obsidian span.cm-hmd-internal-link,
@@ -431,7 +548,7 @@ a.internal-link.is-unresolved):hover {
   text-decoration-color: var(--link-unresolved-hover);
   color: var(--link-unresolved-hover);
   -webkit-text-fill-color: var(--link-unresolved-hover);
-  
+
 }
 
 a.external-link,
