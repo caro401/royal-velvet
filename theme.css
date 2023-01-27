@@ -44,9 +44,6 @@ settings:
         label: Accent Color (hue)
         value: doc-title-accent
       -
-        label: match headings
-        value: doc-title-match
-      -
         label: Rainbow
         value: doc-title-rainbow
       -
@@ -122,16 +119,6 @@ body {
   --cyan-600: rgba(128, 255, 234, 0.6);
 
   --purple-pink: #ca80df;
-
-  --core-saturation: 100%;
-  --core-lightness: 75.1%;
-  --seven-split-pink: hsl(330.20, var(--core-saturation), var(--core-lightness));
-  --seven-split-orange: hsl(21.63, var(--core-saturation), var(--core-lightness));
-  --seven-split-yellow: hsl(73.06, var(--core-saturation), var(--core-lightness));
-  --seven-split-green: hsl(124.49, var(--core-saturation), var(--core-lightness));
-  --seven-split-cyan: hsl(175.91, var(--core-saturation), var(--core-lightness));
-  --seven-split-purple: hsl(227.34, var(--core-saturation), var(--core-lightness));
-  --seven-split-seventh: hsl(278.77, var(--core-saturation), var(--core-lightness));
 
   --background-modifier-cover: var(--blackXDark); /*Obsidian Title Bar Bg*/
   --background-primary: var(--black); /*Note background*/
@@ -325,35 +312,8 @@ body:not(.doc-title-disable) .inline-title {
 body.doc-title-accent .inline-title {
   background-image: linear-gradient(
     var(--gradientDegree),
-    hsl(calc(var(--accent-h) + 30), var(--core-saturation), var(--core-lightness)) 0,
-    hsl(calc(var(--accent-h) - 30), var(--core-saturation), var(--core-lightness)) 100%
-  );
-}
-
-body.doc-title-match {
-  --pink: var(--seven-split-pink);
-  --orange: var(--seven-split-orange);
-  --yellow: var(--seven-split-yellow);
-  --green: var(--seven-split-green);
-  --cyan: var(--seven-split-cyan);
-  --purple: var(--seven-split-purple);
-  --seventh: var(--seven-split-seventh);
-}
-
-body.doc-title-match .inline-title {
-  background-image: linear-gradient(
-    var(--gradientDegree),
-    var(--seventh) 0,
-    var(--pink) 100%
-  );
-}
-
-body.doc-title-match h6,
-body.doc-title-match .cm-header-6 {
-  background-image: linear-gradient(
-    var(--gradientDegree),
-    var(--purple) 0,
-    var(--seventh) 100%
+    hsl(calc(var(--accent-h) + 30), 100%, 75.1%) 0,
+    hsl(calc(var(--accent-h) - 30), 100%, 75.1%) 100%
   );
 }
 
