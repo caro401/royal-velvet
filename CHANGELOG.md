@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.10.1
+
+- added style options for inline title using Style Settings plugin (#28)
+
 ## 0.10.0
 
 - 1.0 migration
