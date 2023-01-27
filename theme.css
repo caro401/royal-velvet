@@ -76,16 +76,6 @@ settings:
 :root {
   --default-font: "Fira Sans", "Inter", sans-serif; /*Note and Settings Text*/
   --font-monospace: "Fira Code", "Source Code Pro", monospace; /*Code block text*/
-
-  --black: #21222c;
-  --blackSecondary: #414558;
-  --blackDark: #1d1e26;
-  --blackXDark: #14141b;
-  --blackLighter: #2a2c37;
-  --white: #f8f8f2;
-  --white-600: rgba(248, 248, 242, 0.6);
-  --white-400: rgba(248, 248, 242, 0.4);
-  --gradientDegree: 135deg;
 }
 
 body {
@@ -94,34 +84,44 @@ body {
 
 /*Dark Theme Variables*/
 .theme-dark {
-  --pink: #ff80bf;
-  --pinkSecondary: #ffcce6;
-  --pink-100: rgba(255, 128, 191, 0.1);
-  --pink-300: rgba(255, 128, 191, 0.3);
-  --pink-400: rgba(255, 128, 191, 0.4);
+  --black: hsl(234.5, 14.3%, 15.1%);
+  --blackSecondary: hsl(229.6, 15%, 30%);
+  --blackDark: hsl(233.3, 13.4%, 13.1%);
+  --blackXDark: hsl(240, 14.9%, 9.2%);
+  --blackLighter: hsl(230.8, 13.4%, 19%);
+  --white: hsl(60, 30%, 96.1%);
+  --white-600: hsla(60, 30%, 96.1%, 0.6);
+  --white-400: hsla(60, 30%, 96.1%, 0.4);
+  --gradientDegree: 135deg;
 
-  --green: #8aff80;
-  --greenSecondary: #d0ffcc;
-  --green-200: rgba(138, 255, 128, 0.2);
+  --pink: hsl(330.2, 100%, 75.1%);
+  --pinkSecondary: hsl(329.4, 100%, 90%);
+  --pink-100: hsla(330.2, 100%, 75.1%, 0.1);
+  --pink-300: hsla(330.2, 100%, 75.1%, 0.3);
+  --pink-400: hsla(330.2, 100%, 75.1%, 0.4);
 
-  --orange: #ffca80;
-  --orangeSecondary: #ffeacc;
-  --orange-100: rgba(255, 202, 128, 0.1);
+  --green: hsl(115.3, 100%, 75.1%);
+  --greenSecondary: hsl(115.3, 100%, 90%);
+  --green-200: hsla(115.3, 100%, 75.1%, 0.2);
 
-  --purple: #9580ff;
-  --purple-200: rgba(149, 128, 255, 0.2);
+  --orange: hsl(35, 100%, 75.1%);
+  --orangeSecondary: hsl(35.3, 100%, 90%);
+  --orange-100: hsla(35, 100%, 75.1%, 0.1);
 
-  --red: #ff9580;
-  --red-900: rgba(255, 149, 128, 0.9);
+  --purple: hsl(249.9, 100%, 75.1%);
+  --purple-200: hsla(249.9, 100%, 75.1%, 0.2);
 
-  --yellow: #ffff80;
-  --yellow-100: rgba(255, 255, 128, 0.1);
-  --yellow-700: rgba(255, 255, 128, 0.7);
+  --red: hsl(9.9, 100%, 75.1%);
+  --red-900: hsla(9.9, 100%, 75.1%, 0.9);
+
+  --yellow: hsl(60, 100%, 75.1%);
+  --yellow-100: hsla(60, 100%, 75.1%, 0.1);
+  --yellow-700: hsla(60, 100%, 75.1%, 0.7);
 
   --cyan: rgb(128, 255, 234);
-  --cyan-600: rgba(128, 255, 234, 0.6);
+  --cyan-600: hsla(170.1, 100%, 75.1%, 0.6);
 
-  --purple-pink: #ca80df;
+  --purple-pink: hsl(286.7, 59.7%, 68.8%);
 
   --core-saturation: 100%;
   --core-lightness: 75.1%;
@@ -132,7 +132,51 @@ body {
   --seven-split-cyan: hsl(175.91, var(--core-saturation), var(--core-lightness));
   --seven-split-purple: hsl(227.34, var(--core-saturation), var(--core-lightness));
   --seven-split-seventh: hsl(278.77, var(--core-saturation), var(--core-lightness));
+}
+/*Light Theme Variables*/
+.theme-light {
+  --black: hsl(0, 0%, 96%);
+  --blackSecondary: hsl(229.6, 15%, 80%);
+  --blackDark: hsl(0, 0%, 99%);
+  --blackXDark: hsl(0, 0%, 89%);
+  --blackLighter: hsl(0, 0%, 83%);
+  --white: hsl(234, 14%, 15%);
+  --white-600: hsla(234, 14%, 15%, 0.6);
+  --white-400: hsla(234, 14%, 15%, 0.4);
+  --gradientDegree: 135deg;
 
+  --pink: hsl(328, 70%, 55%);
+  --pinkSecondary: hsl(328, 70%, 45%);
+  --pink-100: hsla(328, 70%, 55%, 0.1);
+  --pink-300: hsla(328, 70%, 55%, 0.3);
+  --pink-400: hsla(328, 70%, 55%, 0.4);
+
+  --green: hsl(106, 65%, 50%);
+  --greenSecondary: hsl(106, 65%, 45%);
+  --green-200: hsla(106, 65%, 50%, 0.2);
+
+  --orange: hsl(27, 91%, 54%);
+  --orangeSecondary: hsl(27, 91%, 48%);
+  --orange-100: hsla(27, 91%, 54%, 0.1);
+
+  --purple: hsl(300, 43%, 40%);
+  --purple-200: hsla(300, 43%, 40%, 0.2);
+
+  --red: hsl(358, 70%, 55%);
+  --red-900: hsla(358, 70%, 55%, 0.9);
+
+  --yellow: hsl(40, 100%, 56%);
+  --yellow-100: hsla(40, 100%, 56%, 0.1);
+  --yellow-700: hsla(40, 100%, 35%, 0.7);
+
+  --cyan: hsl(197, 80%, 42%);
+  --cyan-600: hsla(197, 80%, 42%, 0.6);
+
+  --purple-pink: hsl(308, 70%, 35%);
+}
+
+/*Common Variables*/
+.theme-dark, .theme-light {
   --background-modifier-cover: var(--blackXDark); /*Obsidian Title Bar Bg*/
   --background-primary: var(--black); /*Note background*/
   --background-primary-alt: var(--blackDark); /*Note Title background active*/
@@ -204,7 +248,6 @@ body {
   --code-size: 100%;
 
   --hr-color: var(--orange) /* Horizontal Line */
-
 }
 
 /*Setting Dropdown*/
