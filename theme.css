@@ -125,13 +125,6 @@ body {
 
   --core-saturation: 100%;
   --core-lightness: 75.1%;
-  --seven-split-pink: hsl(330.20, var(--core-saturation), var(--core-lightness));
-  --seven-split-orange: hsl(21.63, var(--core-saturation), var(--core-lightness));
-  --seven-split-yellow: hsl(73.06, var(--core-saturation), var(--core-lightness));
-  --seven-split-green: hsl(124.49, var(--core-saturation), var(--core-lightness));
-  --seven-split-cyan: hsl(175.91, var(--core-saturation), var(--core-lightness));
-  --seven-split-purple: hsl(227.34, var(--core-saturation), var(--core-lightness));
-  --seven-split-seventh: hsl(278.77, var(--core-saturation), var(--core-lightness));
 }
 /*Light Theme Variables*/
 .theme-light {
@@ -173,10 +166,21 @@ body {
   --cyan-600: hsla(197, 80%, 42%, 0.6);
 
   --purple-pink: hsl(308, 70%, 35%);
+
+  --core-saturation: 70%;
+  --core-lightness: 55%;
 }
 
 /*Common Variables*/
 .theme-dark, .theme-light {
+  --seven-split-pink: hsl(330.20, var(--core-saturation), var(--core-lightness));
+  --seven-split-orange: hsl(21.63, var(--core-saturation), var(--core-lightness));
+  --seven-split-yellow: hsl(73.06, var(--core-saturation), var(--core-lightness));
+  --seven-split-green: hsl(124.49, var(--core-saturation), var(--core-lightness));
+  --seven-split-cyan: hsl(175.91, var(--core-saturation), var(--core-lightness));
+  --seven-split-purple: hsl(227.34, var(--core-saturation), var(--core-lightness));
+  --seven-split-seventh: hsl(278.77, var(--core-saturation), var(--core-lightness));
+
   --background-modifier-cover: var(--blackXDark); /*Obsidian Title Bar Bg*/
   --background-primary: var(--black); /*Note background*/
   --background-primary-alt: var(--blackDark); /*Note Title background active*/
