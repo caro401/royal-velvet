@@ -30,6 +30,13 @@ name: Royal Velvet
 id: royal-velvet
 settings:
   -
+    id: use-accent-color
+    title: Use Accent Color
+    description: Enable rotating of theme colors. Choose an accent color in Appearance > Accent color.
+    type: class-toggle
+    default: false
+
+  -
     id: inline-document-title-color
     title: Inline Document Title Color
     description: Change the color of the inline document title to match another heading or a custom hue.
@@ -91,34 +98,45 @@ body {
 
 /*Dark Theme Variables*/
 .theme-dark {
-  --pink: #ff80bf;
-  --pinkSecondary: #ffcce6;
-  --pink-100: rgba(255, 128, 191, 0.1);
-  --pink-300: rgba(255, 128, 191, 0.3);
-  --pink-400: rgba(255, 128, 191, 0.4);
+  --pink: hsl(330, 100%, 75%);
+  --pinkSecondary: hsl(329, 100%, 90%);
+  --pink-100: hsla(330, 100%, 75%, 0.1);
+  --pink-300: hsla(330, 100%, 75%, 0.3);
+  --pink-400: hsla(330, 100%, 75%, 0.4);
+  
+  --red: hsl(10, 100%, 75%);
+  --red-900: hsla(10, 100%, 75%, 0.9);
 
-  --green: #8aff80;
-  --greenSecondary: #d0ffcc;
-  --green-200: rgba(138, 255, 128, 0.2);
+  --orange: hsl(35, 100%, 75%);
+  --orangeSecondary: hsl(35, 100%, 90%);
+  --orange-100: hsla(35, 100%, 75%, 0.1);
 
-  --orange: #ffca80;
-  --orangeSecondary: #ffeacc;
-  --orange-100: rgba(255, 202, 128, 0.1);
+  --yellow: hsl(60, 100%, 75%);
+  --yellow-100: hsla(60, 100%, 75%, 0.1);
+  --yellow-700: hsla(60, 100%, 75%, 0.7);
+  
+  --green: hsl(115, 100%, 75%);
+  --greenSecondary: hsl(115, 100%, 90%);
+  --green-200: hsla(115, 100%, 75%, 0.2);
 
-  --purple: #9580ff;
-  --purple-200: rgba(149, 128, 255, 0.2);
+  --cyan: hsl(170, 100%, 75%);
+  --cyan-600: hsla(170, 100%, 75%, 0.6);
 
-  --red: #ff9580;
-  --red-900: rgba(255, 149, 128, 0.9);
+  --purple: hsl(250, 100%, 75%);
+  --purple-200: hsla(250, 100%, 75%, 0.2);
 
-  --yellow: #ffff80;
-  --yellow-100: rgba(255, 255, 128, 0.1);
-  --yellow-700: rgba(255, 255, 128, 0.7);
+  --purple-pink: hsl(290, 100%, 75%);
 
-  --cyan: rgb(128, 255, 234);
-  --cyan-600: rgba(128, 255, 234, 0.6);
+  /* hues for custom accent color */
+  --accent-hue-pink:calc(var(--accent-h));
+  --accent-hue-red:calc(var(--accent-h) + 51);
+  --accent-hue-orange:calc(var(--accent-h) + 102);
+  --accent-hue-yellow:calc(var(--accent-h) + 153);
+  --accent-hue-green:calc(var(--accent-h) + 204);
+  --accent-hue-cyan:calc(var(--accent-h) + 255);
+  --accent-hue-purple:calc(var(--accent-h) + 306);
+  --accent-hue-purple-pink:calc(var(--accent-h) + 346);
 
-  --purple-pink: #ca80df;
 
   --background-modifier-cover: var(--blackXDark); /*Obsidian Title Bar Bg*/
   --background-primary: var(--black); /*Note background*/
@@ -192,6 +210,37 @@ body {
 
   --hr-color: var(--orange) /* Horizontal Line */
 
+}
+
+body:is(.use-accent-color) {
+  --pink: hsl(var(--accent-hue-pink), 100%, 75%);
+  --pinkSecondary: hsl(var(--accent-hue-pink), 100%, 90%);
+  --pink-100: hsla(var(--accent-hue-pink), 100%, 75%, 0.1);
+  --pink-300: hsla(var(--accent-hue-pink), 100%, 75%, 0.3);
+  --pink-400: hsla(var(--accent-hue-pink), 100%, 75%, 0.4);
+  
+  --red: hsl(var(--accent-hue-red), 100%, 75%);
+  --red-900: hsla(var(--accent-hue-red), 100%, 75%, 0.9);
+  
+  --orange: hsl(var(--accent-hue-orange), 100%, 75%);
+  --orangeSecondary: hsl(var(--accent-hue-orange), 100%, 90%);
+  --orange-100: hsla(var(--accent-hue-orange), 100%, 75%, 0.1);
+  
+  --yellow: hsl(var(--accent-hue-yellow), 100%, 75%);
+  --yellow-100: hsla(var(--accent-hue-yellow), 100%, 75%, 0.1);
+  --yellow-700: hsla(var(--accent-hue-yellow), 100%, 75%, 0.7);
+
+  --green: hsl(var(--accent-hue-green), 100%, 75%);
+  --greenSecondary: hsl(var(--accent-hue-green), 100%, 90%);
+  --green-200: hsla(var(--accent-hue-green), 100%, 75%, 0.2);
+  
+  --cyan: hsl(var(--accent-hue-cyan), 100%, 75%);
+  --cyan-600: hsla(var(--accent-hue-cyan), 100%, 75%, 0.6);
+
+  --purple: hsl(var(--accent-hue-purple), 100%, 75%);
+  --purple-200: hsla(var(--accent-hue-purple), 100%, 75%, 0.2);
+
+  --purple-pink: hsl(var(--accent-hue-purple-pink), 100%, 75%);
 }
 
 /*Setting Dropdown*/
