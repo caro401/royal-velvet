@@ -81,136 +81,169 @@ body {
 
 /*Dark Theme Variables*/
 .theme-dark {
-  --black: hsl(234.5, 14.3%, 15.1%);
-  --blackSecondary: hsl(229.6, 15%, 30%);
-  --blackDark: hsl(233.3, 13.4%, 13.1%);
-  --blackXDark: hsl(240, 14.9%, 9.2%);
-  --blackLighter: hsl(230.8, 13.4%, 19%);
-  --white: hsl(60, 30%, 96.1%);
-  --white-600: hsla(60, 30%, 96.1%, 0.6);
-  --white-400: hsla(60, 30%, 96.1%, 0.4);
-  --gradientDegree: 135deg;
+  --layer-0: hsl(var(--layer-hue-sat), 5%);
+  --layer-1: hsl(var(--layer-hue-sat), 10%);
+  --layer-2: hsl(var(--layer-hue-sat), 15%);
+  --layer-3: hsl(var(--layer-hue-sat), 20%);
+  --layer-4: hsl(var(--layer-hue-sat), 30%);
+  --on-layer-tuple: 60, 30%, 95%;
 
-  --pink: hsl(330.2, 100%, 75.1%);
-  --pinkSecondary: hsl(329.4, 100%, 90%);
-  --pink-100: hsla(330.2, 100%, 75.1%, 0.1);
-  --pink-300: hsla(330.2, 100%, 75.1%, 0.3);
-  --pink-400: hsla(330.2, 100%, 75.1%, 0.4);
+  --red-hue: 10;
+  --orange-hue: 35;
+  --yellow-hue: 60;
+  --green-hue: 115;
+  --blue-hue: 170;
+  --purple-hue: 250;
+  --purple-pink-hue: 285;
+  --pink-hue: 330;
 
-  --green: hsl(115.3, 100%, 75.1%);
-  --greenSecondary: hsl(115.3, 100%, 90%);
-  --green-200: hsla(115.3, 100%, 75.1%, 0.2);
+  --primary-sat: 100%;
+  --secondary-sat: 100%;
 
-  --orange: hsl(35, 100%, 75.1%);
-  --orangeSecondary: hsl(35.3, 100%, 90%);
-  --orange-100: hsla(35, 100%, 75.1%, 0.1);
+  --primary-lit: 75.1%;
+  --secondary-lit: 90%;
 
-  --purple: hsl(249.9, 100%, 75.1%);
-  --purple-200: hsla(249.9, 100%, 75.1%, 0.2);
-
-  --red: hsl(9.9, 100%, 75.1%);
-  --red-900: hsla(9.9, 100%, 75.1%, 0.9);
-
-  --yellow: hsl(60, 100%, 75.1%);
-  --yellow-100: hsla(60, 100%, 75.1%, 0.1);
-  --yellow-700: hsla(60, 100%, 75.1%, 0.7);
-
-  --cyan: hsl(170.1, 100%, 75.1%);
-  --cyan-600: hsla(170.1, 100%, 75.1%, 0.6);
-
-  --purple-pink: hsl(286.7, 59.7%, 68.8%);
 }
 /*Light Theme Variables*/
 .theme-light {
-  --black: hsl(0, 0%, 96%);
-  --blackSecondary: hsl(229.6, 15%, 80%);
-  --blackDark: hsl(0, 0%, 99%);
-  --blackXDark: hsl(0, 0%, 89%);
-  --blackLighter: hsl(0, 0%, 83%);
-  --white: hsl(234, 14%, 15%);
-  --white-600: hsla(234, 14%, 15%, 0.6);
-  --white-400: hsla(234, 14%, 15%, 0.4);
-  --gradientDegree: 135deg;
+  --layer-0: hsl(var(--layer-hue-sat), 89%);
+  --layer-1: hsl(var(--layer-hue-sat), 99%);
+  --layer-2: hsl(var(--layer-hue-sat), 96%);
+  --layer-3: hsl(var(--layer-hue-sat), 83%);
+  --layer-4: hsl(var(--layer-hue-sat), 80%);
+  --on-layer-tuple: 234, 14%, 15%;
 
-  --pink: hsl(328, 70%, 55%);
-  --pinkSecondary: hsl(328, 70%, 45%);
-  --pink-100: hsla(328, 70%, 55%, 0.1);
-  --pink-300: hsla(328, 70%, 55%, 0.3);
-  --pink-400: hsla(328, 70%, 55%, 0.4);
+  --red-hue: 0;
+  --orange-hue: 30;
+  --yellow-hue: 40;
+  --green-hue: 105;
+  --blue-hue: 200;
+  --purple-hue: 300;
+  --purple-pink-hue: 310;
+  --pink-hue: 330;
 
-  --green: hsl(106, 65%, 50%);
-  --greenSecondary: hsl(106, 65%, 45%);
-  --green-200: hsla(106, 65%, 50%, 0.2);
+  --primary-sat: 80%;
+  --secondary-sat: 80%;
 
-  --orange: hsl(27, 91%, 54%);
-  --orangeSecondary: hsl(27, 91%, 48%);
-  --orange-100: hsla(27, 91%, 54%, 0.1);
-
-  --purple: hsl(300, 43%, 40%);
-  --purple-200: hsla(300, 43%, 40%, 0.2);
-
-  --red: hsl(358, 70%, 55%);
-  --red-900: hsla(358, 70%, 55%, 0.9);
-
-  --yellow: hsl(40, 100%, 56%);
-  --yellow-100: hsla(40, 100%, 56%, 0.1);
-  --yellow-700: hsla(40, 100%, 35%, 0.7);
-
-  --cyan: hsl(197, 80%, 42%);
-  --cyan-600: hsla(197, 80%, 42%, 0.6);
-
-  --purple-pink: hsl(308, 70%, 35%);
+  --primary-lit: 60%;
+  --secondary-lit: 50%;
 }
 
 /*Common Variables*/
-.theme-dark, .theme-light {
-  --background-modifier-cover: var(--blackXDark); /*Obsidian Title Bar Bg*/
-  --background-primary: var(--black); /*Note background*/
-  --background-primary-alt: var(--blackDark); /*Note Title background active*/
-  --background-secondary: var(--blackDark); /*Sidebar background*/
-  --background-secondary-alt: var(--blackXDark); /*Sidebar Title background*/
+.theme-dark,
+.theme-light {
+  --layer-hue-sat: 235, 15%;
 
-  --background-modifier-border: var(
-    --blackDark
-  ); /*Border outline of quotes, tables, line breaks*/
+  --on-layer: hsl(var(--on-layer-tuple));
+  --on-layer-600: hsla(var(--on-layer-tuple), 0.6);
+  --on-layer-400: hsla(var(--on-layer-tuple), 0.4);
+
+  /* red */
+  --red-tuple: var(--red-hue), var(--primary-sat), var(--primary-lit);
+  --red: hsl(var(--red-tuple));
+  --red-900: hsla(var(--red-tuple), 0.9);
+
+  --red-secondary-tuple: var(--red-hue), var(--secondary-sat), var(--secondary-lit);
+
+  /* orange */
+  --orange-tuple: var(--orange-hue), var(--primary-sat), var(--primary-lit);
+  --orange: hsl(var(--orange-tuple));
+  --orange-100: hsla(var(--orange-tuple), 0.1);
+
+  --orange-secondary-tuple: var(--orange-hue), var(--secondary-sat), var(--secondary-lit);
+  --orangeSecondary: hsl(var(--orange-secondary-tuple));
+
+  /* yellow */
+  --yellow-tuple: var(--yellow-hue), var(--primary-sat), var(--primary-lit);
+  --yellow: hsl(var(--yellow-tuple));
+  --yellow-100: hsla(var(--yellow-tuple), 0.1);
+  --yellow-700: hsla(var(--yellow-tuple), 0.7);
+
+  --yellow-secondary-tuple: var(--yellow-hue), var(--secondary-sat), var(--secondary-lit);
+
+  /* green */
+  --green-tuple: var(--green-hue), var(--primary-sat), var(--primary-lit);
+  --green: hsl(var(--green-tuple));
+  --green-200: hsla(var(--green-tuple), 0.2);
+
+  --green-secondary-tuple: var(--green-hue), var(--secondary-sat), var(--secondary-lit);
+  --greenSecondary: hsl(var(--green-secondary-tuple));
+
+  /* blue */
+  --blue-tuple: var(--blue-hue), var(--primary-sat), var(--primary-lit);
+  --blue: hsl(var(--blue-tuple));
+  --blue-600: hsla(var(--blue-tuple), 0.6);
+
+  --blue-secondary-tuple: var(--blue-hue), var(--secondary-sat), var(--secondary-lit);
+
+  /* purple */
+  --purple-tuple: var(--purple-hue), var(--primary-sat), var(--primary-lit);
+  --purple: hsl(var(--purple-tuple));
+  --purple-200: hsla(var(--purple-tuple), 0.2);
+
+  --purple-secondary-tuple: var(--purple-hue), var(--secondary-sat), var(--secondary-lit);
+
+  /* purple-pink */
+  --purple-pink-tuple: var(--purple-pink-hue), var(--primary-sat), var(--primary-lit);
+  --purple-pink: hsl(var(--purple-pink-tuple));
+
+  --purple-pink-secondary-tuple: var(--purple-pink-hue), var(--secondary-sat), var(--secondary-lit);
+
+  /* pink */
+  --pink-tuple: var(--pink-hue), var(--primary-sat), var(--primary-lit);
+  --pink: hsl(var(--pink-tuple));
+  --pink-100: hsla(var(--pink-tuple), 0.1);
+  --pink-300: hsla(var(--pink-tuple), 0.3);
+  --pink-400: hsla(var(--pink-tuple), 0.4);
+
+  --pink-secondary-tuple: var(--pink-hue), var(--secondary-sat), var(--secondary-lit);
+  --pinkSecondary: hsl(var(--pink-secondary-tuple));
+
+  --gradientDegree: 135deg;
+
+  --background-modifier-cover: var(--layer-0); /*Obsidian Title Bar Bg*/
+  --background-primary: var(--layer-2); /*Note background*/
+  --background-primary-alt: var(--layer-1); /*Note Title background active*/
+  --background-secondary: var(--layer-1); /*Sidebar background*/
+  --background-secondary-alt: var(--layer-0); /*Sidebar Title background*/
+
+  --background-modifier-border: var(--layer-1); /*Border outline of quotes, tables, line breaks*/
   --background-modifier-form-field: var(--pink-100);
   --background-modifier-form-field-highlighted: var(--pink-300);
-  --background-modifier-box-shadow: var(--blackLighter);
+  --background-modifier-box-shadow: var(--layer-3);
   --background-modifier-success: var(--green-200);
   --background-modifier-error: var(--red-900);
   --background-modifier-error-rgb: 61, 0, 0;
   --background-modifier-error-hover: var(--red);
 
-  --text-normal: var(--white); /*Text body of note*/
+  --text-normal: var(--on-layer); /*Text body of note*/
   --text-muted: var(
-    --white-600
+    --on-layer-600
   ); /*Text darker for sidebar, toggles, inactive, tags, etc*/
   --text-accent: var(--pink); /*Links*/
   --text-accent-hover: var(--pinkSecondary); /*Links hover*/
-  --text-faint: var(--white-600); /*Link brackets color & Gutter Numbers*/
+  --text-faint: var(--on-layer-600); /*Link brackets color & Gutter Numbers*/
   --text-error: var(--red);
   --text-error-hover: var(--redSecondary);
 
   --text-highlight-bg: var(--yellow-100); /*Search Matches*/
-  --text-highlight-bg-active: var(
-    --orange-100
-  ); /*Active Search Match (Preview Mode)*/
+  --text-highlight-bg-active: var(--orange-100); /*Active Search Match (Preview Mode)*/
   --text-selection: var(--purple-200); /*Text Selections*/
 
   /* other custom vars */
   --indentation-guide-opacity: 10%;
 
   /* --Obsidian Variables-- */
-  --interactive-normal: var(--blackDark); /*Button Color*/
-  --interactive-hover: var(--blackXDark); /*Button Hovered Color*/
+  --interactive-normal: var(--layer-1); /*Button Color*/
+  --interactive-hover: var(--layer-0); /*Button Hovered Color*/
   --interactive-accent: var(--pink); /*Workspace Note Title Underline*/
   --interactive-accent-hover: var(--orange); /*Menu Button Hover*/
   --interactive-success: var(--green);
 
-  --scrollbar-bg: var(--black); /*Scrollbar Gutter Background*/
+  --scrollbar-bg: var(--layer-2); /*Scrollbar Gutter Background*/
   --scrollbar-thumb-bg: var(--pink-100); /*Scrollbar Color*/
   --scrollbar-active-thumb-bg: var(--pink-300); /*Scrollbar Dragged Color*/
-  --indentation-guide: var(--blackSecondary);
+  --indentation-guide: var(--layer-4);
 
   --blockquote-border: var(--red);
   --link-color: var(--orange); /* internal link */
@@ -219,8 +252,8 @@ body {
   --link-unresolved-hover: var(--yellow);
   --link-external-color: var(--green);
   --link-external-color-hover: var(--greenSecondary);
-  --table-header-color: var(--black);
-  --text-on-accent: var(--black);
+  --table-header-color: var(--layer-2);
+  --text-on-accent: var(--layer-2);
 
   --background-modifier-border-hover: transparent;
   --modal-border-color: transparent;
@@ -229,17 +262,22 @@ body {
   --background-modifier-border: transparent; /* separator lines in eg. setting menu */
   --input-shadow: none;
   --blockquote-border-color: none;
-  --ribbon-background : var(--background-secondary-alt);
+  --ribbon-background: var(--background-secondary-alt);
   --ribbon-background-collapsed: var(--background-secondary-alt);
-  --code-normal : var(--purple-pink);
+  --code-normal: var(--purple-pink);
   --code-size: 100%;
 
-  --hr-color: var(--orange) /* Horizontal Line */
+  --hr-color: var(--orange); /* Horizontal Line */
 }
 
 /*Setting Dropdown*/
+.theme-dark .dropdown {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22292.4%22%20height=%22292.4%22%3E%3Cpath%20d=%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%20fill=%22hsl(60,%2030%25,%2096.1%25)%22/%3E%3C/svg%3E");
+}
+.theme-light .dropdown {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22292.4%22%20height=%22292.4%22%3E%3Cpath%20d=%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%20fill=%22hsl(234,%2014%25,%2015%25)%22/%3E%3C/svg%3E");
+}
 .dropdown {
-  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23F8F8F2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
   font-family: var(--default-font);
 }
 
@@ -285,7 +323,7 @@ body {
 
 /*Status Bar*/
 .status-bar {
-  background-color: var(--blackXDark);
+  background-color: var(--layer-0);
   border-top: unset;
   padding-top: 4px;
   max-height: 28px;
@@ -294,7 +332,7 @@ body {
 /*--Workspace: Notes--*/
 /*Note Title Bar*/
 .workspace-leaf .view-header {
-  border-bottom: 5px solid var(--black);
+  border-bottom: 5px solid var(--layer-2);
 }
 
 .view-header-title {
@@ -305,7 +343,7 @@ body {
   > .workspace-leaf:first-of-type:last-of-type
   .view-header,
 .view-header {
-  border-bottom: 5px solid var(--black);
+  border-bottom: 5px solid var(--layer-2);
 }
 /*Active Note Titlebar*/
 /*Note Title Bar: Text*/
@@ -323,11 +361,11 @@ strong,
 em,
 .cm-s-obsidian .cm-em,
 .cm-s-obsidian .cm-quote.cm-em {
-  color: var(--cyan);
+  color: var(--blue);
 }
 
 .cm-em.cm-strong,
-strong>em {
+strong > em {
   color: var(--red);
 }
 
@@ -342,7 +380,7 @@ strong>em {
 
 .cm-strikethrough,
 del {
-  color: var(--white-400);
+  color: var(--on-layer-400);
 }
 
 /*--Headers/Headings--*/
@@ -355,8 +393,8 @@ body:not(.doc-title-disable) .inline-title {
 body.doc-title-accent .inline-title {
   background-image: linear-gradient(
     var(--gradientDegree),
-    hsl(calc(var(--accent-h) + 30), 100%, 75.1%) 0,
-    hsl(calc(var(--accent-h) - 30), 100%, 75.1%) 100%
+    hsl(calc(var(--accent-h) + 30), var(--primary-sat), var(--primary-lit)) 0,
+    hsl(calc(var(--accent-h) - 30), var(--primary-sat), var(--primary-lit)) 100%
   );
 }
 
@@ -367,13 +405,13 @@ body.doc-title-rainbow .inline-title {
     var(--orange) 8.33%,
     var(--yellow) 16.66%,
     var(--green) 25%,
-    var(--cyan) 33.33%,
+    var(--blue) 33.33%,
     var(--purple) 41.66%,
     var(--pink) 50%,
     var(--orange) 58.33%,
     var(--yellow) 66.66%,
     var(--green) 75%,
-    var(--cyan) 83.33%,
+    var(--blue) 83.33%,
     var(--purple) 91.66%,
     var(--pink) 100%
   );
@@ -428,7 +466,7 @@ body.doc-title-h4 .inline-title {
   background-image: linear-gradient(
     var(--gradientDegree),
     var(--green) 0,
-    var(--cyan) 100%
+    var(--blue) 100%
   );
 } /*Source Mode*/
 
@@ -440,7 +478,7 @@ body.doc-title-h5 .inline-title {
   -webkit-background-clip: text;
   background-image: linear-gradient(
     var(--gradientDegree),
-    var(--cyan) 0,
+    var(--blue) 0,
     var(--purple) 100%
   );
 } /*Source Mode*/
@@ -461,32 +499,32 @@ body.doc-title-h6 .inline-title {
 /*--Code--*/
 /* *italicized inline code* */
 span.cm-em.cm-inline-code,
-.markdown-preview-view em>code {
-  color: var(--cyan);
+.markdown-preview-view em > code {
+  color: var(--blue);
 }
 
 /* **bold inline code** */
 span.cm-inline-code.cm-strong,
-.markdown-preview-view strong>code {
+.markdown-preview-view strong > code {
   color: var(--pink);
 }
 
 /* ***bold italicized inline code*** */
 .cm-em.cm-inline-code.cm-strong,
-.markdown-preview-view strong>em>code{
+.markdown-preview-view strong > em > code {
   color: var(--red);
 }
 
 /* ==highlight inline code== */
 span.cm-inline-code.cm-highlight,
-.markdown-preview-view mark>code{
+.markdown-preview-view mark > code {
   color: var(--yellow);
   /* background-color: transparent; */
 }
 
 /* ~~strikethrough inline code~~ */
 span.cm-inline-code.cm-strikethrough,
-.markdown-preview-view del>code{
+.markdown-preview-view del > code {
   color: var(--text-muted);
 }
 
@@ -529,10 +567,12 @@ a.internal-link {
   -webkit-text-fill-color: var(--link-color);
 }
 
-:is(.cm-s-obsidian span.cm-hmd-internal-link,
-  .cm-hmd-internal-link .cm-underline,
-  .cm-hmd-internal-link,
-  a.internal-link):hover {
+:is(
+    .cm-s-obsidian span.cm-hmd-internal-link,
+    .cm-hmd-internal-link .cm-underline,
+    .cm-hmd-internal-link,
+    a.internal-link
+  ):hover {
   /* color: var(--link-color-hover); */
   /* text-decoration-line   : none !important; */
   -webkit-text-fill-color: var(--link-color-hover);
@@ -551,17 +591,18 @@ a.internal-link.is-unresolved {
   text-decoration-color: var(--link-unresolved-color);
 }
 
-:is(.is-unresolved,
-span.is-unresolved > span.cm-hmd-internal-link,
-.markdown-source-view.mod-cm6 .is-unresolved,
-.markdown-preview-view .internal-link.is-unresolved,
-.markdown-rendered .internal-link.is-unresolved,
-span.is-unresolved,
-a.internal-link.is-unresolved):hover {
+:is(
+    .is-unresolved,
+    span.is-unresolved > span.cm-hmd-internal-link,
+    .markdown-source-view.mod-cm6 .is-unresolved,
+    .markdown-preview-view .internal-link.is-unresolved,
+    .markdown-rendered .internal-link.is-unresolved,
+    span.is-unresolved,
+    a.internal-link.is-unresolved
+  ):hover {
   text-decoration-color: var(--link-unresolved-hover);
   color: var(--link-unresolved-hover);
   -webkit-text-fill-color: var(--link-unresolved-hover);
-
 }
 
 a.external-link,
@@ -572,14 +613,14 @@ a.external-link,
 .cm-s-obsidian span.cm-url {
   -webkit-text-fill-color: var(--link-external-color);
   /* removes the link icon to the right */
-  background             : transparent;
+  background: transparent;
 }
 
 /* link icon padding */
 .cm-s-obsidian .external-link,
 a.external-link {
   background-image: none;
-  padding-right   : 0px;
+  padding-right: 0px;
 }
 
 /* ? */
@@ -588,13 +629,13 @@ a.external-link {
 }
 
 /* :is(<items>):hover */
-:is(.cm-link,
-  .cm-link .cm-underline,
-  .external-link,
-  .cm-s-obsidian span.cm-link,
-  .cm-s-obsidian span.cm-url
-
-):hover{
+:is(
+    .cm-link,
+    .cm-link .cm-underline,
+    .external-link,
+    .cm-s-obsidian span.cm-link,
+    .cm-s-obsidian span.cm-url
+  ):hover {
   -webkit-text-fill-color: var(--link-external-color-hover);
 }
 
@@ -604,8 +645,8 @@ blockquote,
   border: 0 solid;
   border-left-width: var(--size-4-1);
   border-radius: var(--radius-s);
-  border-left-color  : var(--blockquote-border); /* ? use different color?*/
-  background-color: var(--blackDark);
+  border-left-color: var(--blockquote-border); /* ? use different color?*/
+  background-color: var(--layer-1);
   padding: 10px 20px;
   margin-inline-start: 30px;
   margin-inline-end: 30px;
@@ -614,14 +655,15 @@ blockquote,
 /* Just left border with no rounding in live preview
  because there's no parent element for the whole quote */
 .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
-  background-color: var(--blackDark);
+  background-color: var(--layer-1);
   padding: 10px 20px;
   margin-inline-start: 30px;
   margin-inline-end: 30px;
 }
 
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before{
-  border-left: var(--size-4-1) solid var(--blockquote-border)
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before,
+.markdown-source-view.mod-cm6 .cm-blockquote-border:before {
+  border-left: var(--size-4-1) solid var(--blockquote-border);
 }
 
 .cm-s-obsidian span.cm-quote {
@@ -637,7 +679,7 @@ cite {
 
 /*--Tables--*/
 table {
-  outline: var(--size-4-1) solid var(--blackDark);
+  outline: var(--size-4-1) solid var(--layer-1);
   outline-offset: -2px; /* should be -4px but otherwise th background color clips somehow */
   margin-left: auto;
   margin-right: auto;
@@ -653,10 +695,10 @@ thead {
 }
 
 /* Dataview Plugin table head */
-thead.table-view-thead{
+thead.table-view-thead {
   background-image: linear-gradient(
     var(--gradientDegree),
-    var(--cyan) 0,
+    var(--blue) 0,
     var(--purple) 100%
   );
 }
@@ -668,12 +710,12 @@ thead .dataview.small-text {
 /* striped table rows */
 .markdown-rendered tbody tr:nth-child(odd),
 .markdown-rendered tbody tr:nth-child(odd):hover {
-  background-color: var(--blackDark);
+  background-color: var(--layer-1);
 }
 
 .markdown-rendered tbody tr:nth-child(even),
-.markdown-rendered tbody tr:nth-child(even):hover{
-  background-color: var(--black);
+.markdown-rendered tbody tr:nth-child(even):hover {
+  background-color: var(--layer-2);
 }
 
 .markdown-preview-view th,
@@ -685,7 +727,7 @@ thead .dataview.small-text {
 .markdown-rendered th {
   text-align: center;
   font-weight: 700;
-  font-size  : 1em;
+  font-size: 1em;
   padding: var(--size-2-3) var(--size-4-2);
   border: none;
 }
@@ -696,11 +738,12 @@ thead .dataview.small-text {
 
 /* Table Head Row Dataview Plugin */
 .table-view-table > thead > tr > th {
-  font-size  : 1em;
+  font-size: 1em;
 }
 
 /* Table Head Row when editing table contents */
-.markdown-source-view.cm-s-obsidian.mod-cm6 .HyperMD-table-row.HyperMD-table-row-0.cm-line {
+.markdown-source-view.cm-s-obsidian.mod-cm6
+  .HyperMD-table-row.HyperMD-table-row-0.cm-line {
   color: var(--text-normal);
 }
 
@@ -752,15 +795,15 @@ section.footnotes li,
 
 .graph-view.color-arrow,
 .graph-view.color-line {
-  color: var(--blackSecondary);
+  color: var(--layer-4);
 }
 
 .graph-view.color-text {
-  color: var(--white);
+  color: var(--on-layer);
 }
 
 .graph-view.color-circle {
-  color: var(--cyan);
+  color: var(--blue);
 }
 
 .graph-view.color-fill-focused {
@@ -775,7 +818,7 @@ input[type="email"],
 input[type="password"],
 input[type="number"] {
   /* border: 1px solid var(--pink-400); */
-  background-color: var(--blackXDark);
+  background-color: var(--layer-0);
 }
 
 input[type="range"] {
@@ -783,16 +826,16 @@ input[type="range"] {
 }
 
 /* Slider in settings menu; doesn't work on mobile */
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   background: var(--pink);
 }
-input[type=range]::-webkit-slider-thumb:hover,
-input[type=range]::-webkit-slider-thumb:active {
+input[type="range"]::-webkit-slider-thumb:hover,
+input[type="range"]::-webkit-slider-thumb:active {
   background: var(--pinkSecondary);
 }
 
 .workspace-leaf-resize-handle:hover {
-  background-color: var(--blackSecondary);
+  background-color: var(--layer-4);
 }
 
 /* image */
@@ -878,7 +921,7 @@ ul ul ul ul ul li::marker,
 ol ol ol ol ol li::marker,
 .HyperMD-list-line-5 .list-bullet::after,
 .HyperMD-list-line.HyperMD-list-line-5 .cm-formatting-list {
-  color: var(--cyan);
+  color: var(--blue);
 }
 ul ul ul ul ul ul li::marker,
 ol ol ol ol ol ol li::marker,
@@ -898,7 +941,7 @@ ol ol ol ol ol ol ol li::marker,
 /* 1.0.0 nested list color variation fix */
 .HyperMD-list-line-1 .list-bullet::after,
 .has-list-bullet .list-bullet:after {
-  background-color:var(--pink);
+  background-color: var(--pink);
 }
 
 .HyperMD-list-line-2 .list-bullet::after,
@@ -912,132 +955,180 @@ ol ol ol ol ol ol ol li::marker,
 }
 
 .HyperMD-list-line-4 .list-bullet::after,
-.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+.has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .list-bullet::after {
   background-color: var(--green);
 }
 
 .HyperMD-list-line-5 .list-bullet::after,
-.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
-  background-color: var(--cyan);
+.has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .list-bullet::after {
+  background-color: var(--blue);
 }
 
 .HyperMD-list-line-6 .list-bullet::after,
-.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+.has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .list-bullet::after {
   background-color: var(--purple);
 }
 
 /* 7th level and higher: grey */
-.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after {
+.has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .list-bullet::after {
   background-color: var(--list-marker-color);
 }
 
-
 /*--Coloured Checkboxes--*/
-ul input[type=checkbox],
-.HyperMD-list-line-1 input[type=checkbox]{
+ul input[type="checkbox"],
+.HyperMD-list-line-1 input[type="checkbox"] {
   border-color: var(--pink);
 }
-.HyperMD-list-line-1 input[type=checkbox][data-task=x],
+.HyperMD-list-line-1 input[type="checkbox"][data-task="x"],
 .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
   background-color: var(--pink);
   border-color: var(--pink);
 }
 
-ul ul input[type=checkbox],
-.HyperMD-list-line-2 input[type=checkbox]{
+ul ul input[type="checkbox"],
+.HyperMD-list-line-2 input[type="checkbox"] {
   border-color: var(--orange);
 }
-.HyperMD-list-line-2 input[type=checkbox][data-task=x],
-.has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+.HyperMD-list-line-2 input[type="checkbox"][data-task="x"],
+.has-list-bullet
+  .has-list-bullet.contains-task-list
+  .task-list-item-checkbox:checked {
   background-color: var(--orange);
   border-color: var(--orange);
 }
 
-ul ul ul input[type=checkbox],
-.HyperMD-list-line-3 input[type=checkbox]{
+ul ul ul input[type="checkbox"],
+.HyperMD-list-line-3 input[type="checkbox"] {
   border-color: var(--yellow);
 }
-.HyperMD-list-line-3 input[type=checkbox][data-task=x],
-.has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+.HyperMD-list-line-3 input[type="checkbox"][data-task="x"],
+.has-list-bullet
+  .has-list-bullet
+  .has-list-bullet.contains-task-list
+  .task-list-item-checkbox:checked {
   background-color: var(--yellow);
   border-color: var(--yellow);
 }
 
-ul ul ul ul input[type=checkbox],
-.HyperMD-list-line-4 input[type=checkbox]{
+ul ul ul ul input[type="checkbox"],
+.HyperMD-list-line-4 input[type="checkbox"] {
   border-color: var(--green);
 }
-.HyperMD-list-line-4 input[type=checkbox][data-task=x],
-.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+.HyperMD-list-line-4 input[type="checkbox"][data-task="x"],
+.has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet.contains-task-list
+  .task-list-item-checkbox:checked {
   background-color: var(--green);
   border-color: var(--green);
 }
 
-ul ul ul ul ul input[type=checkbox],
-.HyperMD-list-line-5 input[type=checkbox]{
-  border-color: var(--cyan);
+ul ul ul ul ul input[type="checkbox"],
+.HyperMD-list-line-5 input[type="checkbox"] {
+  border-color: var(--blue);
 }
-.HyperMD-list-line-5 input[type=checkbox][data-task=x],
-.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
-  background-color: var(--cyan);
-  border-color: var(--cyan);
+.HyperMD-list-line-5 input[type="checkbox"][data-task="x"],
+.has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet.contains-task-list
+  .task-list-item-checkbox:checked {
+  background-color: var(--blue);
+  border-color: var(--blue);
 }
 
-ul ul ul ul ul ul input[type=checkbox],
-.HyperMD-list-line-6 input[type=checkbox]{
+ul ul ul ul ul ul input[type="checkbox"],
+.HyperMD-list-line-6 input[type="checkbox"] {
   border-color: var(--purple);
 }
-.HyperMD-list-line-6 input[type=checkbox][data-task=x],
-.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+.HyperMD-list-line-6 input[type="checkbox"][data-task="x"],
+.has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet.contains-task-list
+  .task-list-item-checkbox:checked {
   background-color: var(--purple);
   border-color: var(--purple);
 }
 
-ul ul ul ul ul ul ul input[type=checkbox]{
+ul ul ul ul ul ul ul input[type="checkbox"] {
   border-color: var(--checkbox-border-color);
 }
-.has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet.contains-task-list .task-list-item-checkbox:checked {
+.has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet
+  .has-list-bullet.contains-task-list
+  .task-list-item-checkbox:checked {
   background-color: var(--checkbox-color);
   border-color: var(--checkbox-color);
 }
 
 /* indentation guides */
-.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+1):before,
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n + 1):before,
 .markdown-rendered.show-indentation-guide li ul::before,
 .markdown-rendered.show-indentation-guide li ol::before {
   border-color: var(--pink);
   opacity: var(--indentation-guide-opacity);
 }
 
-.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+2):before,
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n + 2):before,
 .markdown-rendered.show-indentation-guide li li ul::before,
 .markdown-rendered.show-indentation-guide li li ol::before {
   border-color: var(--orange);
   opacity: var(--indentation-guide-opacity);
 }
 
-.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+3):before,
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n + 3):before,
 .markdown-rendered.show-indentation-guide li li li ul::before,
 .markdown-rendered.show-indentation-guide li li li ol::before {
   border-color: var(--yellow);
   opacity: var(--indentation-guide-opacity);
 }
 
-.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+4):before,
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n + 4):before,
 .markdown-rendered.show-indentation-guide li li li li ul::before,
 .markdown-rendered.show-indentation-guide li li li li ol::before {
   border-color: var(--green);
   opacity: var(--indentation-guide-opacity);
 }
 
-.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+5):before,
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n + 5):before,
 .markdown-rendered.show-indentation-guide li li li li li ul::before,
 .markdown-rendered.show-indentation-guide li li li li li ol::before {
-  border-color: var(--cyan);
+  border-color: var(--blue);
   opacity: var(--indentation-guide-opacity);
 }
 
-.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n+6):before,
+.markdown-source-view.mod-cm6 .cm-indent:nth-child(6n + 6):before,
 .markdown-rendered.show-indentation-guide li li li li li li ul::before,
 .markdown-rendered.show-indentation-guide li li li li li li ol::before {
   border-color: var(--purple);
@@ -1098,13 +1189,13 @@ what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as ba
   background-image: linear-gradient(
     var(--gradientDegree),
     var(--green) 0,
-    var(--cyan) 100%
+    var(--blue) 100%
   );
 }
 .cm-header-5.cm-spell-error {
   background-image: linear-gradient(
     var(--gradientDegree),
-    var(--cyan) 0,
+    var(--blue) 0,
     var(--purple) 100%
   );
 }
@@ -1117,18 +1208,25 @@ what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as ba
 }
 
 /* Tab Title */
-.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
-.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-title,
+.is-focused
+  .mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-icon,
+.is-focused
+  .mod-active
+  .workspace-tab-header.is-active
+  .workspace-tab-header-inner-title,
 .is-focused .workspace-leaf.mod-active .view-header-title {
   font-weight: 700;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
-  background-image: linear-gradient(var(--gradientDegree),
-      var(--pink) 0,
-      var(--orange) 100%);
+  background-image: linear-gradient(
+    var(--gradientDegree),
+    var(--pink) 0,
+    var(--orange) 100%
+  );
 }
-
 
 /* Tab Title Bar */
 /* editing */
@@ -1150,12 +1248,12 @@ what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as ba
 
 /* disabled menu "checkbox" background */
 .checkbox-container:not(.is-enabled) {
-  background-color: var(--blackDark);
+  background-color: var(--layer-1);
 }
 
 /* disabled menu "checkbox" */
 .checkbox-container:not(.is-enabled):hover {
-  background-color: var(--blackXDark);
+  background-color: var(--layer-0);
 }
 
 .MJX-TEX {
@@ -1165,7 +1263,7 @@ what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as ba
 /* math block */
 .math.math-block.cm-embed-block,
 .markdown-preview-view .math.math-block mjx-container.MathJax {
-  background-color: var(--blackDark);
+  background-color: var(--layer-1);
   border-radius: var(--radius-s);
   border-left: var(--radius-s) solid var(--purple);
   border-right: var(--radius-s) solid var(--pink);
@@ -1198,10 +1296,10 @@ what causes this? - .CodeMirror.cm-spell-error setting red a squiggly line as ba
 
 /* foreground color of titlebar close button */
 .titlebar-button.mod-close:hover {
-  color: var(--black);
+  color: var(--layer-2);
 }
 
 /* active line number in editing mode */
 .markdown-source-view.mod-cm6 .cm-gutterElement.cm-active {
-  color: var(--cyan);
+  color: var(--blue);
 }
