@@ -31,7 +31,6 @@ The inline document title's color can be set as any of the following;
 
 - **Disabled** - uses normal text color
 - **Custom color** - based on the hue of your configured accent color
-- **Match with the heading level color pattern** - adjusts all heading colors slightly
 - **Rainbow**
 - **Same as a specific heading level**
 
