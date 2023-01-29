@@ -21,9 +21,9 @@ If you use emoji in headings, you will need to add a plugin to make these displa
 }
 ```
 
-## Customization
+## Customization (Experimental)
 
-Customization options are made available by [The Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings).
+Customization options are made available by [The Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings). As this feature is experimental, it's possible that it will undergo significant changes in the future. Feedback is appreciated.
 
 ### Inline Document Title Color
 
@@ -35,6 +35,7 @@ The inline document title's color can be set as any of the following;
 - **Same as a specific heading level**
 
 By default, it is set to the same color as the level 1 heading.
+
 
 ## Feedback
 
