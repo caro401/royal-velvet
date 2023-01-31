@@ -122,10 +122,10 @@ body {
   --purple-pink-hue: 310;
   --pink-hue: 330;
 
-  --primary-sat: 80%;
+  --primary-sat: 100%;
   --secondary-sat: 80%;
 
-  --primary-lit: 60%;
+  --primary-lit: 43%;
   --secondary-lit: 50%;
 }
 
