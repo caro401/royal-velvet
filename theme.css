@@ -785,11 +785,11 @@ section.footnotes li,
 
 /*--Graph--*/
 
-.theme-dark .graph-view.color-fill-tag {
+.graph-view.color-fill-tag {
   color: var(--orange);
 }
 
-.theme-dark .graph-view.color-fill-attachment {
+.graph-view.color-fill-attachment {
   color: var(--green);
 }
 
@@ -861,34 +861,34 @@ button.mod-warning {
 
 /* Code highlighting theme */
 
-.theme-dark .token.keyword,
-.theme-dark .cm-keyword,
-.theme-dark .cm-builtin,
-.theme-dark .token.operator,
-.theme-dark .cm-operator {
+.token.keyword,
+.cm-keyword,
+.cm-builtin,
+.token.operator,
+.cm-operator {
   color: var(--pink);
 }
 
-.theme-dark .token.atrule,
-.theme-dark .token.attr-value,
-.theme-dark .token.function,
-.theme-dark .cm-attribute,
-.theme-dark .cm-type,
-.theme-dark .cm-def,
-.theme-dark .cm-variable {
+.token.atrule,
+.token.attr-value,
+.token.function,
+.cm-attribute,
+.cm-type,
+.cm-def,
+.cm-variable {
   color: var(--green);
 }
 
-.theme-dark .token.parameter {
+.token.parameter {
   color: var(--orange);
 }
 
-.theme-dark .token.class-name {
+.token.class-name {
   color: var(--purple);
 }
 
-.theme-dark .token.string,
-.theme-dark .cm-string {
+.token.string,
+.cm-string {
   color: var(--yellow);
 }
 
