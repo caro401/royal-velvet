@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.11.0
+
+- added light theme (#30), thanks to [WillsterJohnson](https://github.com/WillsterJohnson)
+
 ## 0.10.1
 
 - added style options for inline title using Style Settings plugin (#28)

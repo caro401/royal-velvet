@@ -1,6 +1,6 @@
 # Royal Velvet Obsidian Theme
 
-A theme for [Obsidian](https://obsidian.md/), inspired by the beautiful colours of [Royal Velvet Obsidian](https://duckduckgo.com/?t=ffab&q=Mexican+Royal+Velvet+Obsidian&iax=images&ia=images) and the distinct colours used in programming syntax highlighting themes.
+A theme for [Obsidian](https://obsidian.md/), inspired by the beautiful colours of [Royal Velvet Obsidian](https://duckduckgo.com/?t=ffab&q=Mexican+Royal+Velvet+Obsidian&iax=images&ia=images) and the distinct colours used in programming syntax highlighting themes. Now supports both **light** and **dark** mode!
 
 ![](royal-velvet.png)
 
@@ -29,13 +29,10 @@ Customization options are made available by [The Style Settings Plugin](https://
 
 The inline document title's color can be set as any of the following;
 
+- **Same as a specific heading level** (default)
 - **Disabled** - uses normal text color
 - **Custom color** - based on the hue of your configured accent color
 - **Rainbow**
-- **Same as a specific heading level**
-
-By default, it is set to the same color as the level 1 heading.
-
 
 ## Feedback
 
