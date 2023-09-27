@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.11.1
+
+- Quick fix for property key styling bug (#37) 
+
 ## 0.11.0
 
 - added light theme (#30), thanks to [WillsterJohnson](https://github.com/WillsterJohnson)
