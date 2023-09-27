@@ -812,7 +812,7 @@ section.footnotes li,
 
 /* Other */
 
-input[type="text"],
+input[type="text"]:not(.metadata-property-key-input),
 input[type="search"],
 input[type="email"],
 input[type="password"],
