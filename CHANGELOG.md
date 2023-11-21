@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.11.2
+
+- embed fonts in CSS to remove network connections, so theme complies with Obsidian theme guidelines (#39)
+
 ## 0.11.1
 
 - Quick fix for property key styling bug (#37) 
