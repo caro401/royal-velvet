@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/caro401/royal-velvet#readme",
   "devDependencies": {
-    "stylelint": "^15.4.0",
+    "stylelint": "^16.0.1",
     "stylelint-config-recommended": "^13.0.0"
   }
 }
