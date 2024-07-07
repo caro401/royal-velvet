@@ -281,7 +281,6 @@ body {
   --background-secondary: var(--layer-1); /*Sidebar background*/
   --background-secondary-alt: var(--layer-0); /*Sidebar Title background*/
 
-  --background-modifier-border: var(--layer-1); /*Border outline of quotes, tables, line breaks*/
   --background-modifier-form-field: var(--pink-100);
   --background-modifier-form-field-highlighted: var(--pink-300);
   --background-modifier-box-shadow: var(--layer-3);
@@ -333,7 +332,7 @@ body {
   --modal-border-color: transparent;
   --prompt-border-color: transparent;
   --background-modifier-border-focus: transparent; /* border around active input boxes */
-  --background-modifier-border: transparent; /* separator lines in eg. setting menu */
+  --background-modifier-border: transparent; /* separator lines in eg. setting menu, border outline of quotes, tables, line breaks */
   --input-shadow: none;
   --blockquote-border-color: none;
   --ribbon-background: var(--background-secondary-alt);
