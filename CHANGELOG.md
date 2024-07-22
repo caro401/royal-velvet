@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.11.3
+
+### Fixed (Developer)
+
+- Stylelint now correctly lints "theme.css"
+- Fixed errors raised by Stylelint
+
 ## 0.11.2
 
 - embed fonts in CSS to remove network connections, so theme complies with Obsidian theme guidelines (#39)
