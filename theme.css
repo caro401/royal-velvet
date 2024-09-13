@@ -176,7 +176,7 @@ body {
 
   --primary-lit: 75.1%;
   --secondary-lit: 90%;
-
+  --on-gradient-lit: 50%;
 }
 /*Light Theme Variables*/
 .theme-light {
@@ -201,6 +201,7 @@ body {
 
   --primary-lit: 43%;
   --secondary-lit: 50%;
+  --on-gradient-lit: 80%;
 }
 
 /*Common Variables*/
@@ -218,6 +219,8 @@ body {
   --red-900: hsla(var(--red-tuple), 0.9);
 
   --red-secondary-tuple: var(--red-hue), var(--secondary-sat), var(--secondary-lit);
+
+  --red-on-gradient: hsl(var(--red-hue), var(--primary-sat), var(--on-gradient-lit));
 
   /* orange */
   --orange-tuple: var(--orange-hue), var(--primary-sat), var(--primary-lit);
@@ -250,6 +253,8 @@ body {
 
   --blue-secondary-tuple: var(--blue-hue), var(--secondary-sat), var(--secondary-lit);
 
+  --blue-on-gradient: hsl(var(--blue-hue), var(--primary-sat), var(--on-gradient-lit));
+
   /* purple */
   --purple-tuple: var(--purple-hue), var(--primary-sat), var(--primary-lit);
   --purple: hsl(var(--purple-tuple));
@@ -272,6 +277,8 @@ body {
 
   --pink-secondary-tuple: var(--pink-hue), var(--secondary-sat), var(--secondary-lit);
   --pinkSecondary: hsl(var(--pink-secondary-tuple));
+
+  --pink-on-gradient: hsl(var(--pink-hue), var(--primary-sat), var(--on-gradient-lit));
 
   --gradientDegree: 135deg;
 
@@ -431,15 +438,33 @@ strong,
   color: var(--pink);
 }
 
+/* bold in table header */
+th strong,
+.table-cell-wrapper .cm-s-obsidian .cm-strong {
+  color: var(--pink-on-gradient);
+}
+
 em,
 .cm-s-obsidian .cm-em,
 .cm-s-obsidian .cm-quote.cm-em {
   color: var(--blue);
 }
 
+/* italics in table header */
+th em,
+.table-cell-wrapper .cm-s-obsidian .cm-em {
+  color: var(--blue-on-gradient);
+}
+
 .cm-em.cm-strong,
 strong > em {
   color: var(--red);
+}
+
+/* bold italics in table header */
+th strong > em,
+.table-cell-wrapper .cm-em.cm-strong {
+  color: var(--red-on-gradient);
 }
 
 /*Highlight*/
