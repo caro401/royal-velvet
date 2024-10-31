@@ -338,7 +338,7 @@ body {
   --ribbon-background: var(--background-secondary-alt);
   --ribbon-background-collapsed: var(--background-secondary-alt);
   --code-normal: var(--purple-pink);
-  --code-size: 100%;
+  --code-size: 1em;
 
   --hr-color: var(--orange); /* Horizontal Line */
 }
