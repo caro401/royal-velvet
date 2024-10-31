@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.11.4
+
+### Fixed (Developer)
+
+- change font size unit of code-size variable (#44)
+
 ## 0.11.3
 
 ### Fixed (Developer)
@@ -13,7 +19,7 @@
 
 ## 0.11.1
 
-- Quick fix for property key styling bug (#37) 
+- Quick fix for property key styling bug (#37)
 
 ## 0.11.0
 
