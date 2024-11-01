@@ -1161,8 +1161,8 @@ ul ul ul ul ul ul ul input[type="checkbox"] {
   .has-list-bullet
   .has-list-bullet.contains-task-list
   .task-list-item-checkbox:checked {
-  background-color: var(--checkbox-color);
-  border-color: var(--checkbox-color);
+  background-color: var(--list-marker-color);
+  border-color: var(--list-marker-color);
 }
 
 /* indentation guides */
