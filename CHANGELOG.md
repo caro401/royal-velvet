@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.11.6
+
+- fixed: Fira font family was no longer used throughout the app
+
 ## 0.11.5
 
 - improve styling of level 7+ checkboxes (#46), thanks [KiwiFlavorBepis](https://github.com/KiwiFlavorBepis)

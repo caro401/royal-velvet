@@ -1,6 +1,6 @@
 /*───────────────────────────────────────────────────────
 Royal Velvet
-Version 0.11.5
+Version 0.11.6
 Created by @caro401
 Readme:
 https://github.com/caro401/royal-velvet
@@ -67,6 +67,9 @@ settings:
 */
 
 /** Embedded Fonts **/
+
+/* hint: shortcut to toggle word wrap in VS Code: Alt + Z
+this hides most of the Base64 encoded font data below */
 
 /* Fira Sans */
 
@@ -144,13 +147,10 @@ settings:
   font-display: swap;
 }
 
-:root {
-  --default-font: "Fira Sans", "Inter", sans-serif; /*Note and Settings Text*/
-  --font-monospace: "Fira Code", "Source Code Pro", monospace; /*Code block text*/
-}
-
 body {
-  --font-monospace-theme: "Fira Code", "Source Code Pro", monospace; /*Code block text*/
+  --font-interface-theme: "Fira Sans", sans-serif; /* Interface text */
+  --font-text-theme: "Fira Sans", sans-serif; /* Note text */
+  --font-monospace-theme: "Fira Code", monospace; /* Monospace text */
 }
 
 /*Dark Theme Variables*/
