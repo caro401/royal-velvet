@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.11.7
+
+- fixed: spell check errors in headings cause gradients to disappear (#48).
+
 ## 0.11.6
 
 - fixed: Fira font family was no longer used throughout the app
