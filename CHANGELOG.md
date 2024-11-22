@@ -1,8 +1,12 @@
 # Changelog
 
+## 0.11.8
+
+- fixed: spell check errors in document title causing gradients to disappear as well
+
 ## 0.11.7
 
-- fixed: spell check errors in headings cause gradients to disappear (#48).
+- fixed: spell check errors in headings cause gradients to disappear (#48)
 
 ## 0.11.6
 
