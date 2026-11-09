@@ -18,6 +18,6 @@
   "homepage": "https://github.com/caro401/royal-velvet#readme",
   "devDependencies": {
     "stylelint": "^17.6.0",
-    "stylelint-config-recommended": "^18.0.0"
+    "stylelint-config-recommended": "^19.0.0"
   }
 }
